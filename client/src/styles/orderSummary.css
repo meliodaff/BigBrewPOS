@@ -1,0 +1,23 @@
+.summary-container {
+  background-color: #d9d9d9;
+  height: 150px;
+  width: 350px;
+  position: absolute;
+  bottom: 40px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 0 20px;
+}
+
+.summary-container button {
+  width: 100px;
+  height: 50px;
+  margin-top: 13px;
+  margin-left: 40px;
+  color: white;
+  border: 0;
+}
+
+.summary-container div {
+  margin-top: 27px;
+}
