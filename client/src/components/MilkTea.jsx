@@ -1,16 +1,21 @@
 import { useEffect, useState } from "react";
 import milkTeaDatas from "./data/milkTea.json";
+import AddOns from "./AddOns";
 const MilkTea = () => {
   const [milkTea, setMilkTea] = useState(milkTeaDatas);
   const [cart, setCart] = useState([]);
+
+  const [showAddOns, setShowAddOns] = useState(false);
+
   const handleClick = (value) => {
-    if (cart.length === 0) {
-      console.log("cart no value");
-      setCart(value);
+    setShowAddOns(true);
+    if (cart.length <= 0) {
+      setCart([value]);
       return;
     }
-    console.log("cart has value/s");
-    setCart((prev) => prev + value);
+
+    setCart((prev) => [...prev, value]);
+    console.log(cart);
   };
 
   useEffect(() => {
@@ -32,6 +37,8 @@ const MilkTea = () => {
           </div>
         ))}
       </div>
+
+      {showAddOns && <AddOns />}
     </>
   );
 };
