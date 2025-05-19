@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "milkTeaName": "Dark Choco",
+    "milkTeaImage": "../src/assets/milkteas/milktea-dark-choco.png"
+  },
+  {
+    "id": 2,
+    "milkTeaName": "Cookies & Cream",
+    "milkTeaImage": "../src/assets/milkteas/milktea-cookies-and-cream.png"
+  },
+  {
+    "id": 3,
+    "milkTeaName": "Okinawa",
+    "milkTeaImage": "../src/assets/milkteas/milktea-okinawa.png"
+  },
+  {
+    "id": 4,
+    "milkTeaName": "Wintermelon",
+    "milkTeaImage": "../src/assets/milkteas/milktea-wintermelon.png"
+  },
+  {
+    "id": 5,
+    "milkTeaName": "Cheesecake",
+    "milkTeaImage": "../src/assets/milkteas/milktea-cheesecake.png"
+  },
+  {
+    "id": 6,
+    "milkTeaName": "Matcha",
+    "milkTeaImage": "../src/assets/milkteas/milktea-matcha.png"
+  },
+  {
+    "id": 7,
+    "milkTeaName": "Chocolate",
+    "milkTeaImage": "../src/assets/milkteas/milktea-chocolate.png"
+  },
+  {
+    "id": 8,
+    "milkTeaName": "Red Velvet",
+    "milkTeaImage": "../src/assets/milkteas/milktea-red-velvet.png"
+  },
+  {
+    "id": 9,
+    "milkTeaName": "Salted Caramel",
+    "milkTeaImage": "../src/assets/milkteas/milktea-salted-caramel.png"
+  },
+  {
+    "id": 10,
+    "milkTeaName": "Choco Kisses",
+    "milkTeaImage": "../src/assets/milkteas/milktea-choco-kisses.png"
+  },
+  {
+    "id": 11,
+    "milkTeaName": "Taro",
+    "milkTeaImage": "../src/assets/milkteas/milktea-taro.png"
+  },
+  {
+    "id": 12,
+    "milkTeaName": "Strawberry",
+    "milkTeaImage": "../src/assets/milkteas/milktea-strawberry.png"
+  }
+]
