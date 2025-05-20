@@ -3,7 +3,7 @@ const SettingsButton = () => {
     <>
       <div className="settings-container">
         <button className="settings-button">
-          <img src="../src/assets/gear-solid.svg" />
+          <img src="/gear-solid.svg" />
         </button>
       </div>
     </>
