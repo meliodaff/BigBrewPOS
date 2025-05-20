@@ -154,7 +154,23 @@ const AddOns = (props) => {
                 <div className="add-ons-name">Whipped Cream</div> */}
               </div>
             </div>
-            <div className="modal-footer">
+            <div
+              className="modal-footer"
+              style={{
+                display: "flex",
+                justifyContent: "flex-start",
+              }}
+            >
+              <button
+                type="button"
+                className="btn btn-primary w-25"
+                onClick={() => {
+                  handleClick();
+                  props.onClose();
+                }}
+              >
+                Add
+              </button>
               <button
                 type="button"
                 className="btn btn-secondary"
@@ -162,16 +178,6 @@ const AddOns = (props) => {
                 onClick={props.onClose}
               >
                 Close
-              </button>
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={() => {
-                  handleClick();
-                  props.onClose();
-                }}
-              >
-                Add
               </button>
             </div>
           </div>
