@@ -4,10 +4,12 @@ import AddOns from "./AddOns";
 const MilkTea = () => {
   const [milkTea, setMilkTea] = useState(milkTeaDatas);
   const [cart, setCart] = useState([]);
+  const [milkTeaForAddOns, setMilkTeaForAddOns] = useState(null);
 
   const [showAddOns, setShowAddOns] = useState(false);
 
   const handleClick = (value) => {
+    setMilkTeaForAddOns(value.milkTeaName);
     setShowAddOns(true);
     if (cart.length <= 0) {
       setCart([value]);
@@ -37,8 +39,12 @@ const MilkTea = () => {
           </div>
         ))}
       </div>
-
-      {showAddOns && <AddOns />}
+      {showAddOns && (
+        <AddOns
+          milkTea={milkTeaForAddOns}
+          onClose={() => setShowAddOns(false)}
+        />
+      )}
     </>
   );
 };

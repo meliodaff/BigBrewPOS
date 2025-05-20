@@ -18,3 +18,34 @@ body {
 .settings-button:active {
   background-color: rgb(125, 123, 123);
 }
+
+.modal {
+  border: solid 1px black;
+  color: lightpink;
+  padding-top: 30%;
+}
+
+.add-ons-container {
+  display: grid;
+  grid-template-columns: 20% 40%;
+  row-gap: 10px;
+}
+
+.sizes-container {
+  display: grid;
+  grid-template-columns: 20% 40%;
+  row-gap: 10px;
+}
+
+.add-ons-checkbox {
+}
+
+.add-ons-name {
+}
+
+.divider-add-ons {
+  background-color: rgba(0, 0, 0, 0.272);
+  width: 340px;
+  height: 1px;
+  margin: 10px 0;
+}
