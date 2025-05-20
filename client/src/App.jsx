@@ -9,16 +9,18 @@ function App() {
   const [showMilkTeaProduct, setShowMilkTeaProduct] = useState(true);
   const [showPrafProduct, setShowPrafProduct] = useState(false);
 
+  const [totalItems, setTotalItems] = useState(0);
+
   return (
     <>
       <Header
         setShowMilkTeaProduct={setShowMilkTeaProduct}
         setShowPrafProduct={setShowPrafProduct}
       />
-      {showMilkTeaProduct && <MilkTea />}
+      {showMilkTeaProduct && <MilkTea setTotalItems={setTotalItems} />}
       {showPrafProduct && <Praf />}
       <SettingsButton />
-      <OrderSummary />
+      <OrderSummary cartItems={totalItems} />
     </>
   );
 }

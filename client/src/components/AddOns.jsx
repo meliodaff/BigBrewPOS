@@ -1,8 +1,24 @@
 import { use, useState } from "react";
 
-const AddOns = ({ milkTea, onClose }) => {
+const AddOns = (props) => {
   const [size, setSize] = useState("Medio");
   const [addOns, setAddOns] = useState([]);
+
+  const handleClick = () => {
+    const newItem = {
+      id: props.milkTea.id,
+      milkTeaName: props.milkTea.milkTeaName,
+      milkTeaSize: size,
+      milkTeaImage: props.milkTea.milkTeaImage,
+    };
+
+    if (props.cart.length < 1) {
+      props.setCart([newItem]);
+      return;
+    }
+    props.setCart((prev) => [...prev, newItem]);
+  };
+
   return (
     <>
       <div
@@ -13,13 +29,15 @@ const AddOns = ({ milkTea, onClose }) => {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title">Add Ons for {milkTea}</h5>
+              <h5 className="modal-title">
+                Add Ons for {props.milkTea.milkTeaName}
+              </h5>
               <button
                 type="button"
                 className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
-                onClick={onClose}
+                onClick={props.onClose}
               ></button>
             </div>
             <div className="modal-body">
@@ -71,11 +89,18 @@ const AddOns = ({ milkTea, onClose }) => {
                 type="button"
                 className="btn btn-secondary"
                 data-bs-dismiss="modal"
-                onClick={onClose}
+                onClick={props.onClose}
               >
                 Close
               </button>
-              <button type="button" className="btn btn-primary">
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={() => {
+                  handleClick();
+                  props.onClose();
+                }}
+              >
                 Add
               </button>
             </div>

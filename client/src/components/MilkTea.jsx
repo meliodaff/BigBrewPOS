@@ -1,27 +1,21 @@
 import { useEffect, useState } from "react";
 import milkTeaDatas from "./data/milkTea.json";
 import AddOns from "./AddOns";
-const MilkTea = () => {
+const MilkTea = (props) => {
   const [milkTea, setMilkTea] = useState(milkTeaDatas);
   const [cart, setCart] = useState([]);
   const [milkTeaForAddOns, setMilkTeaForAddOns] = useState(null);
 
   const [showAddOns, setShowAddOns] = useState(false);
 
-  const handleClick = (value) => {
-    setMilkTeaForAddOns(value.milkTeaName);
+  const handleClick = (milkTeaItem) => {
+    setMilkTeaForAddOns(milkTeaItem);
     setShowAddOns(true);
-    if (cart.length <= 0) {
-      setCart([value]);
-      return;
-    }
-
-    setCart((prev) => [...prev, value]);
-    console.log(cart);
   };
 
   useEffect(() => {
     console.log(cart);
+    props.setTotalItems(cart.length); // i should refactor this because im going to just put quantity inside the object
   }, [cart]);
 
   return (
@@ -43,6 +37,8 @@ const MilkTea = () => {
         <AddOns
           milkTea={milkTeaForAddOns}
           onClose={() => setShowAddOns(false)}
+          cart={cart}
+          setCart={setCart}
         />
       )}
     </>
