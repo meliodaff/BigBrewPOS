@@ -1,62 +1,62 @@
 [
   {
     "id": 1,
-    "milkTeaName": "Dark Choco",
-    "milkTeaImage": "/milkteas/milktea-dark-choco.png"
+    "drinkName": "Dark Choco",
+    "drinkImage": "/milkteas/milktea-dark-choco.png"
   },
   {
     "id": 2,
-    "milkTeaName": "Cookies & Cream",
-    "milkTeaImage": "/milkteas/milktea-cookies-and-cream.png"
+    "drinkName": "Cookies & Cream",
+    "drinkImage": "/milkteas/milktea-cookies-and-cream.png"
   },
   {
     "id": 3,
-    "milkTeaName": "Okinawa",
-    "milkTeaImage": "/milkteas/milktea-okinawa.png"
+    "drinkName": "Okinawa",
+    "drinkImage": "/milkteas/milktea-okinawa.png"
   },
   {
     "id": 4,
-    "milkTeaName": "Wintermelon",
-    "milkTeaImage": "/milkteas/milktea-wintermelon.png"
+    "drinkName": "Wintermelon",
+    "drinkImage": "/milkteas/milktea-wintermelon.png"
   },
   {
     "id": 5,
-    "milkTeaName": "Cheesecake",
-    "milkTeaImage": "/milkteas/milktea-cheesecake.png"
+    "drinkName": "Cheesecake",
+    "drinkImage": "/milkteas/milktea-cheesecake.png"
   },
   {
     "id": 6,
-    "milkTeaName": "Matcha",
-    "milkTeaImage": "/milkteas/milktea-matcha.png"
+    "drinkName": "Matcha",
+    "drinkImage": "/milkteas/milktea-matcha.png"
   },
   {
     "id": 7,
-    "milkTeaName": "Chocolate",
-    "milkTeaImage": "/milkteas/milktea-chocolate.png"
+    "drinkName": "Chocolate",
+    "drinkImage": "/milkteas/milktea-chocolate.png"
   },
   {
     "id": 8,
-    "milkTeaName": "Red Velvet",
-    "milkTeaImage": "/milkteas/milktea-red-velvet.png"
+    "drinkName": "Red Velvet",
+    "drinkImage": "/milkteas/milktea-red-velvet.png"
   },
   {
     "id": 9,
-    "milkTeaName": "Salted Caramel",
-    "milkTeaImage": "/milkteas/milktea-salted-caramel.png"
+    "drinkName": "Salted Caramel",
+    "drinkImage": "/milkteas/milktea-salted-caramel.png"
   },
   {
     "id": 10,
-    "milkTeaName": "Choco Kisses",
-    "milkTeaImage": "/milkteas/milktea-choco-kisses.png"
+    "drinkName": "Choco Kisses",
+    "drinkImage": "/milkteas/milktea-choco-kisses.png"
   },
   {
     "id": 11,
-    "milkTeaName": "Taro",
-    "milkTeaImage": "/milkteas/milktea-taro.png"
+    "drinkName": "Taro",
+    "drinkImage": "/milkteas/milktea-taro.png"
   },
   {
     "id": 12,
-    "milkTeaName": "Strawberry",
-    "milkTeaImage": "/milkteas/milktea-strawberry.png"
+    "drinkName": "Strawberry",
+    "drinkImage": "/milkteas/milktea-strawberry.png"
   }
 ]

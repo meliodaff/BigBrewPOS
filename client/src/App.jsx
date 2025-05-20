@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 import Header from "./components/Header";
 import MilkTea from "./components/MilkTea";
 import Praf from "./components/Praf";
@@ -9,7 +9,24 @@ function App() {
   const [showMilkTeaProduct, setShowMilkTeaProduct] = useState(true);
   const [showPrafProduct, setShowPrafProduct] = useState(false);
 
-  const [totalItems, setTotalItems] = useState(0);
+  const [totalPriceForMilkTeas, setTotalPriceForMilkTeas] = useState(0);
+  const [totalPriceForPrafs, setTotalPriceForPrafs] = useState(0);
+
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    let updatedTotal = 0;
+
+    cart.forEach((drink) => {
+      updatedTotal += drink.price;
+      console.log(drink);
+    });
+    // const updatedTotal = totalPriceForMilkTeas + totalPriceForPrafs;
+    setTotalPrice(updatedTotal);
+    console.log(cart);
+  }, [totalPriceForMilkTeas, totalPriceForPrafs, cart]);
 
   return (
     <>
@@ -17,10 +34,10 @@ function App() {
         setShowMilkTeaProduct={setShowMilkTeaProduct}
         setShowPrafProduct={setShowPrafProduct}
       />
-      {showMilkTeaProduct && <MilkTea setTotalItems={setTotalItems} />}
-      {showPrafProduct && <Praf />}
+      {showMilkTeaProduct && <MilkTea cart={cart} setCart={setCart} />}
+      {showPrafProduct && <Praf cart={cart} setCart={setCart} />}
       <SettingsButton />
-      <OrderSummary cartItems={totalItems} />
+      <OrderSummary cartItems={cart.length} totalPrice={totalPrice} />
     </>
   );
 }

@@ -3,10 +3,12 @@ import milkTeaDatas from "./data/milkTea.json";
 import AddOns from "./AddOns";
 const MilkTea = (props) => {
   const [milkTea, setMilkTea] = useState(milkTeaDatas);
-  const [cart, setCart] = useState([]);
+
   const [milkTeaForAddOns, setMilkTeaForAddOns] = useState(null);
 
   const [showAddOns, setShowAddOns] = useState(false);
+
+  const [totalPriceForMilkTeas, setTotalPriceForMilkTeas] = useState(0);
 
   const handleClick = (milkTeaItem) => {
     setMilkTeaForAddOns(milkTeaItem);
@@ -14,9 +16,8 @@ const MilkTea = (props) => {
   };
 
   useEffect(() => {
-    console.log(cart);
-    props.setTotalItems(cart.length); // i should refactor this because im going to just put quantity inside the object
-  }, [cart]);
+    props.setCart(props.cart);
+  }, [props.cart]);
 
   return (
     <>
@@ -27,9 +28,9 @@ const MilkTea = (props) => {
               onClick={() => handleClick(value)}
               className="product-button"
             >
-              <img src={value.milkTeaImage} className="product-image" />
+              <img src={value.drinkImage} className="product-image" />
             </button>
-            <div className="product-name">{value.milkTeaName}</div>
+            <div className="product-name">{value.drinkName}</div>
           </div>
         ))}
       </div>
@@ -37,8 +38,11 @@ const MilkTea = (props) => {
         <AddOns
           milkTea={milkTeaForAddOns}
           onClose={() => setShowAddOns(false)}
-          cart={cart}
-          setCart={setCart}
+          cart={props.cart}
+          setCart={props.setCart}
+          setTotalPrice={setTotalPriceForMilkTeas}
+          medioPrice={29}
+          grandePrice={39}
         />
       )}
     </>

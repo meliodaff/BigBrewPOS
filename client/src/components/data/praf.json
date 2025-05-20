@@ -1,0 +1,62 @@
+[
+  {
+    "id": 13,
+    "prafName": "Coffee Jelly",
+    "prafImage": "/praf/coffee-jelly.png"
+  },
+  {
+    "id": 14,
+    "prafName": "Caramel Macch",
+    "prafImage": "/praf/caramel-macch.png"
+  },
+  {
+    "id": 15,
+    "prafName": "Mocha",
+    "prafImage": "/praf/mocha.png"
+  },
+  {
+    "id": 16,
+    "prafName": "Vanilla Coffee",
+    "prafImage": "/praf/vanilla-coffee.png"
+  },
+  {
+    "id": 17,
+    "prafName": "Java Chip",
+    "prafImage": "/praf/java-chip.png"
+  },
+  {
+    "id": 18,
+    "prafName": "Cheesecake",
+    "prafImage": "/praf/cheesecake.png"
+  },
+  {
+    "id": 19,
+    "prafName": "Cookies & Cream",
+    "prafImage": "/praf/cookies-and-cream.png"
+  },
+  {
+    "id": 20,
+    "prafName": "Creamy Avocado",
+    "prafImage": "/praf/creamy-avocado.png"
+  },
+  {
+    "id": 21,
+    "prafName": "Chocolate",
+    "prafImage": "/praf/chocolate.png"
+  },
+  {
+    "id": 22,
+    "prafName": "Matcha",
+    "prafImage": "/praf/matcha.png"
+  },
+  {
+    "id": 23,
+    "prafName": "Strawberry",
+    "prafImage": "/praf/strawberry.png"
+  },
+  {
+    "id": 24,
+    "prafName": "Taro",
+    "prafImage": "/praf/taro.png"
+  }
+]
