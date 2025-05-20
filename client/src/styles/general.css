@@ -4,8 +4,9 @@ body {
 }
 .settings-container {
   position: absolute;
-  right: 20px;
-  bottom: 200px;
+  right: 25px;
+  bottom: 120px;
+  z-index: 1;
 }
 
 .settings-button {
@@ -20,9 +21,7 @@ body {
 }
 
 .modal {
-  border: solid 1px black;
-  color: lightpink;
-  padding-top: 30%;
+  padding-top: 20%;
 }
 
 .add-ons-container {

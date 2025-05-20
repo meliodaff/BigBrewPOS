@@ -3,7 +3,7 @@
   height: 150px;
   width: 350px;
   position: absolute;
-  bottom: 40px;
+  bottom: 20px;
   display: grid;
   grid-template-columns: 50% 50%;
   margin: 0 20px;
