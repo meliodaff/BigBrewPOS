@@ -9,17 +9,6 @@ body {
   z-index: 1;
 }
 
-.settings-button {
-  height: 50px;
-  width: 50px;
-  background-color: transparent;
-  border: 0;
-}
-
-.settings-button:active {
-  background-color: rgb(125, 123, 123);
-}
-
 .modal {
   padding-top: 20%;
 }

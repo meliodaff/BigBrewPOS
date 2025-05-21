@@ -1,7 +1,7 @@
 .summary-container {
   background-color: #d9d9d9;
   height: 150px;
-  width: 350px;
+  width: 370px;
   position: absolute;
   bottom: 20px;
   display: grid;
@@ -20,4 +20,15 @@
 
 .summary-container div {
   margin-top: 27px;
+}
+
+.settings-button {
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+  border: 0;
+}
+
+.settings-button:active {
+  background-color: rgb(125, 123, 123);
 }
