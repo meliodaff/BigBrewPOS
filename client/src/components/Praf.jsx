@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import prafDatas from "./data/praf.json";
-import AddOns from "./AddOns";
+import AddOns from "./MilkTeaAddOns";
+import PrafAddOns from "./PrafAddOns";
 const Praf = (props) => {
   const [prafs, setPrafs] = useState(prafDatas);
 
@@ -28,19 +29,19 @@ const Praf = (props) => {
               onClick={() => handleClick(value)}
               className="product-button"
             >
-              <img src={value.prafImage} className="product-image" />
+              <img src={value.drinkImage} className="product-image" />
             </button>
-            <div className="product-name">{value.prafName}</div>
+            <div className="product-name">{value.drinkName}</div>
           </div>
         ))}
       </div>
       {showAddOns && (
-        <AddOns
+        <PrafAddOns
           praf={prafForAddOns}
           onClose={() => setShowAddOns(false)}
           cart={props.cart}
-          setCart={props.setAllCart}
-          setTotalPriceForPrafs={setTotalPriceForPrafs}
+          setCart={props.setCart}
+          setTotalPrice={setTotalPriceForPrafs}
           medioPrice={39}
           grandePrice={49}
         />

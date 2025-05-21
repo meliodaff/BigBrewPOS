@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import milkTeaDatas from "./data/milkTea.json";
-import AddOns from "./AddOns";
+import MilkTeaAddOns from "./MilkTeaAddOns";
 const MilkTea = (props) => {
   const [milkTea, setMilkTea] = useState(milkTeaDatas);
 
@@ -35,7 +35,7 @@ const MilkTea = (props) => {
         ))}
       </div>
       {showAddOns && (
-        <AddOns
+        <MilkTeaAddOns
           milkTea={milkTeaForAddOns}
           onClose={() => setShowAddOns(false)}
           cart={props.cart}

@@ -1,6 +1,6 @@
 import { use, useEffect, useState } from "react";
 
-const AddOns = (props) => {
+const PrafAddOns = (props) => {
   const [size, setSize] = useState("Medio");
   const [addOns, setAddOns] = useState([]);
 
@@ -32,11 +32,11 @@ const AddOns = (props) => {
     });
     // HAVE TO CHANGE THIS TO A MORE CONSISTENT NAME
     const newItem = {
-      id: props.milkTea.id,
-      milkTeaName: props.milkTea.milkTeaName,
-      milkTeaSize: size,
-      milkTeaImage: props.milkTea.milkTeaImage,
-      milkTeaAddOns: addOns,
+      id: props.praf.id,
+      drinkName: props.praf.drinkName,
+      drinkSize: size,
+      drinkImage: props.praf.drinkImage,
+      drinkAddOns: addOns,
       price: priceForSize + priceForAddOns,
     };
 
@@ -47,13 +47,13 @@ const AddOns = (props) => {
     }
 
     const updatedCart = [...props.cart, newItem];
-
-    let totalPriceForMilkTeas = 0;
+    console.log(updatedCart);
+    let totalPriceForPrafs = 0;
     for (let i = 0; i < updatedCart.length; i++) {
-      totalPriceForMilkTeas += updatedCart[i].milkTeaPrice;
+      totalPriceForPrafs += updatedCart[i].price;
     }
 
-    props.setTotalPrice(totalPriceForMilkTeas);
+    props.setTotalPrice(totalPriceForPrafs);
   };
 
   useEffect(() => {
@@ -71,7 +71,7 @@ const AddOns = (props) => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title">
-                {/* Add Ons for {props.milkTea.drinkName} */}
+                Add Ons for {props.praf.drinkName}
               </h5>
               <button
                 type="button"
@@ -114,7 +114,7 @@ const AddOns = (props) => {
                       className="add-ons-checkbox"
                       disabled={
                         item === "Extra Shot" &&
-                        props.milkTea.milkTeaName !== "Salted Caramel"
+                        props.praf.drinkName !== "Salted Caramel"
                       }
                       value={item}
                       checked={addOns.includes(item)}
@@ -187,4 +187,4 @@ const AddOns = (props) => {
   );
 };
 
-export default AddOns;
+export default PrafAddOns;
