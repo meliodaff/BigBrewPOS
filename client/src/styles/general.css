@@ -10,30 +10,5 @@ body {
 }
 
 .modal {
-  padding-top: 20%;
-}
-
-.add-ons-container {
-  display: grid;
-  grid-template-columns: 20% 40%;
-  row-gap: 10px;
-}
-
-.sizes-container {
-  display: grid;
-  grid-template-columns: 20% 40%;
-  row-gap: 10px;
-}
-
-.add-ons-checkbox {
-}
-
-.add-ons-name {
-}
-
-.divider-add-ons {
-  background-color: rgba(0, 0, 0, 0.272);
-  width: 340px;
-  height: 1px;
-  margin: 10px 0;
+  border: 1px solid black;
 }

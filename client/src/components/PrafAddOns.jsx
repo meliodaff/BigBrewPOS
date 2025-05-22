@@ -2,19 +2,17 @@ import { use, useEffect, useState } from "react";
 
 const PrafAddOns = (props) => {
   const [size, setSize] = useState("Medio");
-  const [addOns, setAddOns] = useState([]);
-
-  const availableAddOns = [
-    "Extra Shot",
-    "Pearl",
-    "Crystal",
-    "Cream Cheese",
-    "Cream Puff",
-    "Cheesecake",
-    "Crushed Oreo",
-    "Coffee Jelly",
-    "Whipped Cream",
-  ];
+  const [addOns, setAddOns] = useState({
+    extraShot: 0,
+    pearl: 0,
+    crystal: 0,
+    creamCheese: 0,
+    creamPuff: 0,
+    cheesecake: 0,
+    crushedOreo: 0,
+    coffeeJelly: 0,
+    whippedCream: 0,
+  });
 
   const handleClick = () => {
     const priceForSize =
@@ -23,11 +21,19 @@ const PrafAddOns = (props) => {
 
     let priceForAddOns = 0;
 
-    addOns.forEach((item) => {
-      if (item === "Extra Shot") {
-        priceForAddOns += 5;
+    Object.entries(addOns).forEach(([key, value]) => {
+      if (value === 0) {
+        // if the add ons were not increased, it will just skip the calculations
+        return;
+      }
+
+      console.log(`Key: ${key}`);
+      console.log(`Value: ${value}`);
+
+      if (key === "extraShot") {
+        priceForAddOns += value * 5;
       } else {
-        priceForAddOns += 9;
+        priceForAddOns += value * 9;
       }
     });
     // HAVE TO CHANGE THIS TO A MORE CONSISTENT NAME
@@ -45,15 +51,6 @@ const PrafAddOns = (props) => {
     } else {
       props.setCart((prev) => [...prev, newItem]);
     }
-
-    const updatedCart = [...props.cart, newItem];
-    console.log(updatedCart);
-    let totalPriceForPrafs = 0;
-    for (let i = 0; i < updatedCart.length; i++) {
-      totalPriceForPrafs += updatedCart[i].price;
-    }
-
-    props.setTotalPrice(totalPriceForPrafs);
   };
 
   useEffect(() => {
@@ -107,17 +104,70 @@ const PrafAddOns = (props) => {
 
               <h3>Add Ons:</h3>
               <div className="add-ons-container">
-                {availableAddOns.map((item, index) => (
+                {Object.entries(addOns).map(([key, value]) => (
+                  <>
+                    <button
+                      disabled={
+                        key === "extraShot" &&
+                        props.praf.drinkName !== "Coffee Jelly"
+                      }
+                      onClick={() => {
+                        if (addOns[key] >= 5) {
+                          return;
+                        }
+                        setAddOns((prev) => ({
+                          ...prev,
+                          [key]: prev[key] + 1,
+                        }));
+                      }}
+                      className="btn btn-success add"
+                    >
+                      +
+                    </button>
+                    <button
+                      disabled={
+                        key === "extraShot" &&
+                        props.praf.drinkName !== "Coffee Jelly"
+                      }
+                      onClick={() => {
+                        if (addOns[key] <= 0) {
+                          return;
+                        }
+                        setAddOns((prev) => ({
+                          ...prev,
+                          [key]: prev[key] - 1,
+                        }));
+                      }}
+                      className="btn btn-danger minus"
+                    >
+                      -
+                    </button>
+                    <input
+                      disabled
+                      type="number"
+                      value={addOns[key]}
+                      onChange={(e) => {
+                        setAddOns((prev) => ({
+                          ...prev,
+                          [key]: e.target.value,
+                        }));
+                      }}
+                    />
+                    <div className="add-ons-name">{key}</div>
+                  </>
+                ))}
+
+                {/* {availableAddOns.map((item, index) => (
                   <>
                     <input
-                      type="checkbox"
+                      type="number"
                       className="add-ons-checkbox"
                       disabled={
                         item === "Extra Shot" &&
                         props.praf.drinkName !== "Salted Caramel"
                       }
                       value={item}
-                      checked={addOns.includes(item)}
+                      // checked={addOns.includes(item)}
                       onChange={(e) => {
                         const value = e.target.value;
                         if (e.target.checked) {
@@ -133,25 +183,7 @@ const PrafAddOns = (props) => {
                     />
                     <div className="add-ons-name">{item}</div>
                   </>
-                ))}
-                {/* 
-                    
-                <input type="checkbox" className="add-ons-checkbox" />
-                <div className="add-ons-name">Pearl</div>
-                <input type="checkbox" className="add-ons-checkbox" />
-                <div className="add-ons-name">Crystal</div>
-                <input type="checkbox" className="add-ons-checkbox" />
-                <div className="add-ons-name">Cream Cheese</div>
-                <input type="checkbox" className="add-ons-checkbox" />
-                <div className="add-ons-name">Cream Puff</div>
-                <input type="checkbox" className="add-ons-checkbox" />
-                <div className="add-ons-name">Cheesecake</div>
-                <input type="checkbox" className="add-ons-checkbox" />
-                <div className="add-ons-name">Crushed Oreo</div>
-                <input type="checkbox" className="add-ons-checkbox" />
-                <div className="add-ons-name">Coffee Jelly</div>
-                <input type="checkbox" className="add-ons-checkbox" />
-                <div className="add-ons-name">Whipped Cream</div> */}
+                ))} */}
               </div>
             </div>
             <div

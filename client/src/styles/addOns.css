@@ -1,0 +1,22 @@
+.sizes-container {
+  display: grid;
+  grid-template-columns: 20% 40%;
+  row-gap: 10px;
+}
+
+.add-ons-container {
+  /* display: grid;
+  grid-template-columns: 20% 40%;
+  row-gap: 10px; */
+  display: grid;
+  grid-template-columns: 20% 20% 25% 5%;
+  gap: 10px;
+  border: 0;
+}
+
+.divider-add-ons {
+  background-color: rgba(0, 0, 0, 0.272);
+  width: 340px;
+  height: 1px;
+  margin: 10px 0;
+}

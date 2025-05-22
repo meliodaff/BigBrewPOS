@@ -40,7 +40,6 @@ const MilkTea = (props) => {
           onClose={() => setShowAddOns(false)}
           cart={props.cart}
           setCart={props.setCart}
-          setTotalPrice={setTotalPriceForMilkTeas}
           medioPrice={29}
           grandePrice={39}
         />
