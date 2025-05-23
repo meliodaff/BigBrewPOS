@@ -4,14 +4,46 @@
   row-gap: 10px;
 }
 
+.sizes-container-iced-coffee {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  row-gap: 10px;
+  padding-left: 20px;
+}
+
+.size-checkbox-iced-coffee {
+  height: 25px;
+  width: 25px;
+  margin-right: 10px;
+}
+
+.size-details-container {
+  display: flex;
+}
+
 .add-ons-container {
   /* display: grid;
   grid-template-columns: 20% 40%;
   row-gap: 10px; */
   display: grid;
-  grid-template-columns: 20% 20% 25% 5%;
+  /* grid-template-columns: 20% 20% 25% 5%; */
+  grid-template-columns: 100%;
   gap: 10px;
-  border: 0;
+}
+
+.add,
+.minus {
+  width: 70px;
+  margin-right: 10px;
+}
+
+.add-ons-input {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.add-ons-name {
+  display: inline;
 }
 
 .divider-add-ons {

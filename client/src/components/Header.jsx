@@ -18,7 +18,9 @@ const Header = (props) => {
     setBrosty(false);
     setSpecial(false);
 
+    props.setShowIcedCoffeeProduct(true);
     props.setShowMilkTeaProduct(false);
+    props.setShowPrafProduct(false);
   };
 
   const milkTeaClick = () => {
@@ -32,6 +34,7 @@ const Header = (props) => {
 
     props.setShowMilkTeaProduct(true);
     props.setShowPrafProduct(false);
+    props.setShowIcedCoffeeProduct(false);
   };
 
   const fruitTeaClick = () => {
@@ -55,6 +58,7 @@ const Header = (props) => {
 
     props.setShowPrafProduct(true);
     props.setShowMilkTeaProduct(false);
+    props.setShowIcedCoffeeProduct(false);
   };
 
   const hotBrewClick = () => {

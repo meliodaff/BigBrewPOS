@@ -1,0 +1,42 @@
+[
+  {
+    "id": 25,
+    "drinkName": "Brusko",
+    "drinkImage": "/icedcoffee/brusko.png"
+  },
+  {
+    "id": 26,
+    "drinkName": "Mocha",
+    "drinkImage": "/icedcoffee/mocha-coffee.png"
+  },
+  {
+    "id": 27,
+    "drinkName": "Macchiato",
+    "drinkImage": "/icedcoffee/macchiato.png"
+  },
+  {
+    "id": 28,
+    "drinkName": "Vanilla",
+    "drinkImage": "/icedcoffee/vanilla.png"
+  },
+  {
+    "id": 29,
+    "drinkName": "Caramel",
+    "drinkImage": "/icedcoffee/caramel.png"
+  },
+  {
+    "id": 30,
+    "drinkName": "Matcha",
+    "drinkImage": "/icedcoffee/matcha-coffee.png"
+  },
+  {
+    "id": 31,
+    "drinkName": "Fudge",
+    "drinkImage": "/icedcoffee/fudge.png"
+  },
+  {
+    "id": 32,
+    "drinkName": "Spanish Latte",
+    "drinkImage": "/icedcoffee/spanish-latte.png"
+  }
+]

@@ -1,6 +1,6 @@
 import { use, useEffect, useState } from "react";
 
-const MilkTeaAddOns = (props) => {
+const IcedCoffeeAddOns = (props) => {
   const [size, setSize] = useState("Medio");
   const [addOns, setAddOns] = useState({
     extraShot: 0,
@@ -16,7 +16,11 @@ const MilkTeaAddOns = (props) => {
 
   const handleClick = () => {
     const priceForSize =
-      size === "Medio" ? props.medioPrice : props.grandePrice;
+      size === "Medio"
+        ? props.medioPrice
+        : size === "Hot"
+        ? props.hotPrice
+        : props.grandePrice;
     // const priceForAddOns = addOns.length * 9;
 
     let priceForAddOns = 0;
@@ -38,10 +42,10 @@ const MilkTeaAddOns = (props) => {
     });
     // HAVE TO CHANGE THIS TO A MORE CONSISTENT NAME
     const newItem = {
-      id: props.milkTea.id,
-      drinkName: props.milkTea.drinkName,
+      id: props.icedCoffee.id,
+      drinkName: props.icedCoffee.drinkName,
       drinkSize: size,
-      drinkImage: props.milkTea.drinkImage,
+      drinkImage: props.icedCoffee.drinkImage,
       drinkAddOns: addOns,
       price: priceForSize + priceForAddOns,
     };
@@ -68,7 +72,7 @@ const MilkTeaAddOns = (props) => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title">
-                Add Ons for {props.milkTea.drinkName}
+                Add Ons for {props.icedCoffee.drinkName}
               </h5>
               <button
                 type="button"
@@ -80,36 +84,51 @@ const MilkTeaAddOns = (props) => {
             </div>
             <div className="modal-body">
               <h3>Sizes:</h3>
-              <div className="sizes-container">
-                <input
-                  type="checkbox"
-                  className="size-checkbox"
-                  checked={size === "Medio"}
-                  onChange={() => {
-                    setSize((prev) => (prev === "Medio" ? "" : "Medio"));
-                  }}
-                />
-                <div className="size">Medio</div>
-                <input
-                  type="checkbox"
-                  className="size-checkbox"
-                  checked={size === "Grande"}
-                  onChange={() => {
-                    setSize((prev) => (prev === "Grande" ? "" : "Grande"));
-                  }}
-                />
-                <div className="size">Grande</div>
+              <div className="sizes-container-iced-coffee">
+                <div className="size-details-container">
+                  <input
+                    type="checkbox"
+                    className="size-checkbox-iced-coffee"
+                    checked={size === "Medio"}
+                    onChange={() => {
+                      setSize((prev) => (prev !== "Medio" ? "Medio" : ""));
+                    }}
+                  />
+                  <div className="size">Medio</div>
+                </div>
+                <div className="size-details-container">
+                  <input
+                    type="checkbox"
+                    className="size-checkbox-iced-coffee"
+                    checked={size === "Hot"}
+                    onChange={() => {
+                      setSize((prev) => (prev !== "Hot" ? "Hot" : ""));
+                    }}
+                  />
+                  <div className="size">Hot</div>
+                </div>
+                <div className="size-details-container">
+                  <input
+                    type="checkbox"
+                    className="size-checkbox-iced-coffee"
+                    checked={size === "Grande"}
+                    onChange={() => {
+                      setSize((prev) => (prev !== "Grande" ? "Grande" : ""));
+                    }}
+                  />
+                  <div className="size">Grande</div>
+                </div>
               </div>
               <div className="divider-add-ons"></div>
 
               <h3>Add Ons:</h3>
               <div className="add-ons-container">
                 {Object.entries(addOns).map(([key, value], index) => (
-                  <div key={index}>
+                  <div key={index} className="">
                     <button
                       disabled={
                         key === "extraShot" &&
-                        props.milkTea.drinkName !== "Coffee Jelly"
+                        props.icedCoffee.drinkName !== "Coffee Jelly"
                       }
                       onClick={() => {
                         if (addOns[key] >= 5) {
@@ -127,7 +146,7 @@ const MilkTeaAddOns = (props) => {
                     <button
                       disabled={
                         key === "extraShot" &&
-                        props.milkTea.drinkName !== "Salted Caramel"
+                        props.icedCoffee.drinkName !== "Salted Caramel"
                       }
                       onClick={() => {
                         if (addOns[key] <= 0) {
@@ -220,4 +239,4 @@ const MilkTeaAddOns = (props) => {
   );
 };
 
-export default MilkTeaAddOns;
+export default IcedCoffeeAddOns;

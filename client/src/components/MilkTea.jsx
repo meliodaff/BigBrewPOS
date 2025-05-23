@@ -8,8 +8,6 @@ const MilkTea = (props) => {
 
   const [showAddOns, setShowAddOns] = useState(false);
 
-  const [totalPriceForMilkTeas, setTotalPriceForMilkTeas] = useState(0);
-
   const handleClick = (milkTeaItem) => {
     setMilkTeaForAddOns(milkTeaItem);
     setShowAddOns(true);

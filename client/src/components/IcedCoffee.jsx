@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
-import prafDatas from "./data/praf.json";
-import AddOns from "./MilkTeaAddOns";
-import PrafAddOns from "./PrafAddOns";
-const Praf = (props) => {
-  const [prafs, setPrafs] = useState(prafDatas);
+import icedCoffeeDatas from "./data/icedCoffee.json";
+import IcedCoffeeAddOns from "./IcedCoffeeAddOns";
+const IcedCoffee = (props) => {
+  const [icedCoffee, setIcedCoffee] = useState(icedCoffeeDatas);
 
-  const [prafForAddOns, setPrafForAddOns] = useState(null);
+  const [icedCoffeeForAddOns, setIcedCoffeeForAddOns] = useState(null);
 
   const [showAddOns, setShowAddOns] = useState(false);
 
-  const handleClick = (prafItem) => {
-    setPrafForAddOns(prafItem);
+  const handleClick = (icedCoffeeItem) => {
+    setIcedCoffeeForAddOns(icedCoffeeItem);
     setShowAddOns(true);
   };
 
@@ -21,7 +20,7 @@ const Praf = (props) => {
   return (
     <>
       <div className="product-grid">
-        {prafs.map((value, index) => (
+        {icedCoffee.map((value, index) => (
           <div className="product-container" key={index}>
             <button
               onClick={() => handleClick(value)}
@@ -34,17 +33,18 @@ const Praf = (props) => {
         ))}
       </div>
       {showAddOns && (
-        <PrafAddOns
-          praf={prafForAddOns}
+        <IcedCoffeeAddOns
+          icedCoffee={icedCoffeeForAddOns}
           onClose={() => setShowAddOns(false)}
           cart={props.cart}
           setCart={props.setCart}
-          medioPrice={39}
-          grandePrice={49}
+          medioPrice={29}
+          grandePrice={39}
+          hotPrice={39}
         />
       )}
     </>
   );
 };
 
-export default Praf;
+export default IcedCoffee;

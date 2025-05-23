@@ -2,12 +2,14 @@ import { use, useEffect, useState } from "react";
 import Header from "./components/Header";
 import MilkTea from "./components/MilkTea";
 import Praf from "./components/Praf";
+import IcedCoffee from "./components/IcedCoffee";
 import SettingsButton from "./components/SettingsButton";
 import OrderSummary from "./components/OrderSummary";
 
 function App() {
   const [showMilkTeaProduct, setShowMilkTeaProduct] = useState(true);
   const [showPrafProduct, setShowPrafProduct] = useState(false);
+  const [showIcedCoffeeProduct, setShowIcedCoffeeProduct] = useState(false);
 
   const [totalPriceForMilkTeas, setTotalPriceForMilkTeas] = useState(0);
   const [totalPriceForPrafs, setTotalPriceForPrafs] = useState(0);
@@ -33,9 +35,11 @@ function App() {
       <Header
         setShowMilkTeaProduct={setShowMilkTeaProduct}
         setShowPrafProduct={setShowPrafProduct}
+        setShowIcedCoffeeProduct={setShowIcedCoffeeProduct}
       />
       {showMilkTeaProduct && <MilkTea cart={cart} setCart={setCart} />}
       {showPrafProduct && <Praf cart={cart} setCart={setCart} />}
+      {showIcedCoffeeProduct && <IcedCoffee cart={cart} setCart={setCart} />}
       <SettingsButton />
       <OrderSummary cartItems={cart.length} totalPrice={totalPrice} />
     </>

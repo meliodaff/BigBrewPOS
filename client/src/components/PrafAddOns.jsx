@@ -104,8 +104,8 @@ const PrafAddOns = (props) => {
 
               <h3>Add Ons:</h3>
               <div className="add-ons-container">
-                {Object.entries(addOns).map(([key, value]) => (
-                  <>
+                {Object.entries(addOns).map(([key, value], index) => (
+                  <div key={index}>
                     <button
                       disabled={
                         key === "extraShot" &&
@@ -152,9 +152,10 @@ const PrafAddOns = (props) => {
                           [key]: e.target.value,
                         }));
                       }}
+                      className="add-ons-input"
                     />
                     <div className="add-ons-name">{key}</div>
-                  </>
+                  </div>
                 ))}
 
                 {/* {availableAddOns.map((item, index) => (
