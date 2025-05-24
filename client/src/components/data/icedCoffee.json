@@ -2,41 +2,49 @@
   {
     "id": 25,
     "drinkName": "Brusko",
-    "drinkImage": "/icedcoffee/brusko.png"
+    "drinkImage": "/icedcoffee/brusko.png",
+    "drinkCategory": "Iced Coffee"
   },
   {
     "id": 26,
     "drinkName": "Mocha",
-    "drinkImage": "/icedcoffee/mocha-coffee.png"
+    "drinkImage": "/icedcoffee/mocha-coffee.png",
+    "drinkCategory": "Iced Coffee"
   },
   {
     "id": 27,
     "drinkName": "Macchiato",
-    "drinkImage": "/icedcoffee/macchiato.png"
+    "drinkImage": "/icedcoffee/macchiato.png",
+    "drinkCategory": "Iced Coffee"
   },
   {
     "id": 28,
     "drinkName": "Vanilla",
-    "drinkImage": "/icedcoffee/vanilla.png"
+    "drinkImage": "/icedcoffee/vanilla.png",
+    "drinkCategory": "Iced Coffee"
   },
   {
     "id": 29,
     "drinkName": "Caramel",
-    "drinkImage": "/icedcoffee/caramel.png"
+    "drinkImage": "/icedcoffee/caramel.png",
+    "drinkCategory": "Iced Coffee"
   },
   {
     "id": 30,
     "drinkName": "Matcha",
-    "drinkImage": "/icedcoffee/matcha-coffee.png"
+    "drinkImage": "/icedcoffee/matcha-coffee.png",
+    "drinkCategory": "Iced Coffee"
   },
   {
     "id": 31,
     "drinkName": "Fudge",
-    "drinkImage": "/icedcoffee/fudge.png"
+    "drinkImage": "/icedcoffee/fudge.png",
+    "drinkCategory": "Iced Coffee"
   },
   {
     "id": 32,
     "drinkName": "Spanish Latte",
-    "drinkImage": "/icedcoffee/spanish-latte.png"
+    "drinkImage": "/icedcoffee/spanish-latte.png",
+    "drinkCategory": "Iced Coffee"
   }
 ]

@@ -48,6 +48,7 @@ const IcedCoffeeAddOns = (props) => {
       drinkImage: props.icedCoffee.drinkImage,
       drinkAddOns: addOns,
       price: priceForSize + priceForAddOns,
+      drinkCategory: props.icedCoffee.drinkCategory,
     };
 
     if (props.cart.length < 1) {

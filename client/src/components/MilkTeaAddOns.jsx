@@ -27,9 +27,6 @@ const MilkTeaAddOns = (props) => {
         return;
       }
 
-      console.log(`Key: ${key}`);
-      console.log(`Value: ${value}`);
-
       if (key === "extraShot") {
         priceForAddOns += value * 5;
       } else {
@@ -44,8 +41,8 @@ const MilkTeaAddOns = (props) => {
       drinkImage: props.milkTea.drinkImage,
       drinkAddOns: addOns,
       price: priceForSize + priceForAddOns,
+      drinkCategory: props.milkTea.drinkCategory,
     };
-
     if (props.cart.length < 1) {
       props.setCart([newItem]);
     } else {

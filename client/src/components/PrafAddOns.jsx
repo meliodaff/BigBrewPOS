@@ -44,6 +44,7 @@ const PrafAddOns = (props) => {
       drinkImage: props.praf.drinkImage,
       drinkAddOns: addOns,
       price: priceForSize + priceForAddOns,
+      drinkCategory: props.praf.drinkCategory,
     };
 
     if (props.cart.length < 1) {

@@ -2,61 +2,73 @@
   {
     "id": 1,
     "drinkName": "Dark Choco",
-    "drinkImage": "/milkteas/milktea-dark-choco.png"
+    "drinkImage": "/milkteas/milktea-dark-choco.png",
+    "drinkCategory": "Milk Tea"
   },
   {
     "id": 2,
     "drinkName": "Cookies & Cream",
-    "drinkImage": "/milkteas/milktea-cookies-and-cream.png"
+    "drinkImage": "/milkteas/milktea-cookies-and-cream.png",
+    "drinkCategory": "Milk Tea"
   },
   {
     "id": 3,
     "drinkName": "Okinawa",
-    "drinkImage": "/milkteas/milktea-okinawa.png"
+    "drinkImage": "/milkteas/milktea-okinawa.png",
+    "drinkCategory": "Milk Tea"
   },
   {
     "id": 4,
     "drinkName": "Wintermelon",
-    "drinkImage": "/milkteas/milktea-wintermelon.png"
+    "drinkImage": "/milkteas/milktea-wintermelon.png",
+    "drinkCategory": "Milk Tea"
   },
   {
     "id": 5,
     "drinkName": "Cheesecake",
-    "drinkImage": "/milkteas/milktea-cheesecake.png"
+    "drinkImage": "/milkteas/milktea-cheesecake.png",
+    "drinkCategory": "Milk Tea"
   },
   {
     "id": 6,
     "drinkName": "Matcha",
-    "drinkImage": "/milkteas/milktea-matcha.png"
+    "drinkImage": "/milkteas/milktea-matcha.png",
+    "drinkCategory": "Milk Tea"
   },
   {
     "id": 7,
     "drinkName": "Chocolate",
-    "drinkImage": "/milkteas/milktea-chocolate.png"
+    "drinkImage": "/milkteas/milktea-chocolate.png",
+    "drinkCategory": "Milk Tea"
   },
   {
     "id": 8,
     "drinkName": "Red Velvet",
-    "drinkImage": "/milkteas/milktea-red-velvet.png"
+    "drinkImage": "/milkteas/milktea-red-velvet.png",
+    "drinkCategory": "Milk Tea"
   },
   {
     "id": 9,
     "drinkName": "Salted Caramel",
-    "drinkImage": "/milkteas/milktea-salted-caramel.png"
+    "drinkImage": "/milkteas/milktea-salted-caramel.png",
+    "drinkCategory": "Milk Tea"
   },
   {
     "id": 10,
     "drinkName": "Choco Kisses",
-    "drinkImage": "/milkteas/milktea-choco-kisses.png"
+    "drinkImage": "/milkteas/milktea-choco-kisses.png",
+    "drinkCategory": "Milk Tea"
   },
   {
     "id": 11,
     "drinkName": "Taro",
-    "drinkImage": "/milkteas/milktea-taro.png"
+    "drinkImage": "/milkteas/milktea-taro.png",
+    "drinkCategory": "Milk Tea"
   },
   {
     "id": 12,
     "drinkName": "Strawberry",
-    "drinkImage": "/milkteas/milktea-strawberry.png"
+    "drinkImage": "/milkteas/milktea-strawberry.png",
+    "drinkCategory": "Milk Tea"
   }
 ]

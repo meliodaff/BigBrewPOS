@@ -30,6 +30,10 @@ function App() {
     console.log(cart);
   }, [totalPriceForMilkTeas, totalPriceForPrafs, cart]);
 
+  const myFunc = () => {
+    console.log("my func in app");
+  };
+
   return (
     <>
       <Header
@@ -41,7 +45,13 @@ function App() {
       {showPrafProduct && <Praf cart={cart} setCart={setCart} />}
       {showIcedCoffeeProduct && <IcedCoffee cart={cart} setCart={setCart} />}
       <SettingsButton />
-      <OrderSummary cartItems={cart.length} totalPrice={totalPrice} />
+      <OrderSummary
+        cartItems={cart.length}
+        totalPrice={totalPrice}
+        myFunc={myFunc}
+        cart={cart}
+        setCart={setCart}
+      />
     </>
   );
 }

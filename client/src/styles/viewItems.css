@@ -1,0 +1,36 @@
+.item-container {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  align-items: start;
+}
+
+.item-image {
+  height: 110px;
+  width: 110px;
+  grid-area: 1 / 1 / 4 / 2;
+  object-fit: cover;
+}
+
+.item-name,
+.item-add-ons {
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.edit-button {
+  border: 0;
+  border-radius: 10px;
+  width: 70px;
+  background-color: #5eb065;
+  color: white;
+  height: 30px;
+}
