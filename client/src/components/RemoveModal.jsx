@@ -27,7 +27,6 @@ const RemoveModal = (props) => {
               <p>
                 Are you sure you want to remove{" "}
                 <b>{props.drinkName || "N / A"}</b>? <br />
-                This is irreversible.
               </p>
             </div>
             <div className="modal-footer d-flex justify-content-start">
