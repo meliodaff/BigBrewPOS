@@ -31,8 +31,10 @@ const ViewItems = (props) => {
                         alt="Drink"
                       />
                       <div className="item-details">
-                        <div className="item-name">{item.drinkName}</div>
-                        <div className="item-size">{item.drinkSize}</div>
+                        <b className="item-name" style={{ fontSize: "large" }}>
+                          {item.drinkName}
+                        </b>
+                        <b className="item-size">{item.drinkSize}</b>
                         <div className="item-add-ons">
                           {Object.entries(item.drinkAddOns).map(
                             ([key, value], index) => (
