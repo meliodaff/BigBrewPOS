@@ -31,7 +31,7 @@ function App() {
   }, [totalPriceForMilkTeas, totalPriceForPrafs, cart]);
 
   const myFunc = () => {
-    console.log("my func in app");
+    console.log(cart);
   };
 
   return (

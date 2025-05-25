@@ -1,4 +1,5 @@
 import { use, useEffect, useState } from "react";
+import formatAddOnName from "../services/formatAddOnName";
 
 const PrafAddOns = (props) => {
   const [size, setSize] = useState("Medio");
@@ -79,7 +80,7 @@ const PrafAddOns = (props) => {
                 onClick={props.onClose}
               ></button>
             </div>
-            <div className="modal-body">
+            <div className="modal-body" style={{ paddingTop: "0" }}>
               <h3>Sizes:</h3>
               <div className="sizes-container">
                 <input
@@ -155,7 +156,7 @@ const PrafAddOns = (props) => {
                       }}
                       className="add-ons-input"
                     />
-                    <div className="add-ons-name">{key}</div>
+                    <div className="add-ons-name">{formatAddOnName(key)}</div>
                   </div>
                 ))}
 

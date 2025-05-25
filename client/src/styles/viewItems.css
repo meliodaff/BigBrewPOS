@@ -1,3 +1,8 @@
+.items-modal {
+  max-height: 540px; /* or any height you want */
+  overflow-y: auto;
+}
+
 .item-container {
   display: grid;
   grid-template-columns: 110px 1fr;
@@ -15,15 +20,14 @@
   object-fit: cover;
 }
 
-.item-name,
-.item-add-ons {
-}
-
 .item-details {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 5px;
+}
+
+.item-add-ons {
 }
 
 .edit-button {

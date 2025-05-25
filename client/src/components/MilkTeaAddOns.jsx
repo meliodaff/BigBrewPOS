@@ -1,4 +1,5 @@
 import { use, useEffect, useState } from "react";
+import formatAddOnName from "../services/formatAddOnName";
 
 const MilkTeaAddOns = (props) => {
   const [size, setSize] = useState("Medio");
@@ -75,7 +76,7 @@ const MilkTeaAddOns = (props) => {
                 onClick={props.onClose}
               ></button>
             </div>
-            <div className="modal-body">
+            <div className="modal-body" style={{ paddingTop: "0" }}>
               <h3>Sizes:</h3>
               <div className="sizes-container">
                 <input
@@ -106,7 +107,7 @@ const MilkTeaAddOns = (props) => {
                     <button
                       disabled={
                         key === "extraShot" &&
-                        props.milkTea.drinkName !== "Coffee Jelly"
+                        props.milkTea.drinkName !== "Salted Caramel"
                       }
                       onClick={() => {
                         if (addOns[key] >= 5) {
@@ -151,7 +152,7 @@ const MilkTeaAddOns = (props) => {
                       }}
                       className="add-ons-input"
                     />
-                    <div className="add-ons-name">{key}</div>
+                    <div className="add-ons-name">{formatAddOnName(key)}</div>
                   </div>
                 ))}
 
