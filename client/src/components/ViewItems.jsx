@@ -114,7 +114,9 @@ const ViewItems = (props) => {
             </div>
             <div className="modal-footer d-flex justify-content-start">
               <button
-                // disabled={props.cart.length === currentCart.length}
+                disabled={
+                  JSON.stringify(props.cart) === JSON.stringify(currentCart)
+                }
                 type="button"
                 className="btn btn-primary"
                 onClick={() => {
