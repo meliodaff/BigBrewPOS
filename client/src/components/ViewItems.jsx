@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import formatAddOnName from "../services/formatAddOnName";
 import RemoveModal from "./RemoveModal";
+import MilkTeaAddOns from "./MilkTeaAddOns";
 const ViewItems = (props) => {
   const [showRemoveModal, setShowRemoveModal] = useState(false);
   const [positionToRemove, setPositionToRemove] = useState(null);
   const [drinkName, setDrinkName] = useState("");
   const [currentCart, setCurrentCart] = useState([]);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [drinkToEdit, setDrinkToEdit] = useState([]);
+  const [positionToEdit, setPositionToEdit] = useState(null);
 
   useEffect(() => {
     setCurrentCart(props.cart);
@@ -17,6 +21,17 @@ const ViewItems = (props) => {
     setCurrentCart(updatedCart);
     setShowRemoveModal(false);
     // props.setCart(currentCart);
+  };
+
+  const handleEdit = () => {
+    console.log("im for editing function");
+    console.log(positionToEdit);
+    console.log(drinkToEdit);
+
+    // create a function that updates the details of a certain drink
+    // edited -- we can create the function right inside the milkteaaddons.jsx
+    // because im assuming that all the required details for me to edit the drink
+    // are there
   };
 
   useEffect(() => {
@@ -69,7 +84,16 @@ const ViewItems = (props) => {
                           )}
                         </div>
                         <div>₱{item.price}</div>
-                        <button className="edit-button">Edit</button>
+                        <button
+                          className="edit-button"
+                          onClick={() => {
+                            setShowEditModal(true);
+                            setDrinkToEdit(item);
+                            setPositionToEdit(index);
+                          }}
+                        >
+                          Edit
+                        </button>
                       </div>
                       <button
                         className="remove-item btn btn-danger"
@@ -90,7 +114,7 @@ const ViewItems = (props) => {
             </div>
             <div className="modal-footer d-flex justify-content-start">
               <button
-                disabled={props.cart.length === currentCart.length}
+                // disabled={props.cart.length === currentCart.length}
                 type="button"
                 className="btn btn-primary"
                 onClick={() => {
@@ -122,6 +146,33 @@ const ViewItems = (props) => {
           drinkName={drinkName}
         />
       )}
+      {console.log(drinkToEdit)}
+      {showEditModal && drinkToEdit.drinkCategory === "Milk Tea" ? (
+        <MilkTeaAddOns
+          // milkTea={milkTeaForAddOns || ""}
+          milkTea={drinkToEdit}
+          onClose={() => setShowEditModal(false)}
+          cart={props.cart}
+          setCart={props.setCart}
+          medioPrice={29}
+          grandePrice={39}
+          extraShot={0}
+          pearl={drinkToEdit.drinkAddOns.pearl}
+          crystal={drinkToEdit.drinkAddOns.crystal}
+          creamCheese={drinkToEdit.drinkAddOns.creamCheese}
+          creamPuff={drinkToEdit.drinkAddOns.creamPuff}
+          cheesecake={drinkToEdit.drinkAddOns.cheesecake}
+          crushedOreo={drinkToEdit.drinkAddOns.crushedOreo}
+          coffeeJelly={drinkToEdit.drinkAddOns.coffeeJelly}
+          whippedCream={drinkToEdit.drinkAddOns.whippedCream}
+          forEdit={true}
+          handleEdit={handleEdit}
+          currentCart={currentCart}
+          setCurrentCart={setCurrentCart}
+          positionToEdit={positionToEdit}
+          size={drinkToEdit.drinkSize}
+        />
+      ) : null}
     </>
   );
 };
