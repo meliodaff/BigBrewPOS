@@ -2,17 +2,17 @@ import { use, useEffect, useState } from "react";
 import formatAddOnName from "../services/formatAddOnName";
 
 const IcedCoffeeAddOns = (props) => {
-  const [size, setSize] = useState("Medio");
+  const [size, setSize] = useState(props.size);
   const [addOns, setAddOns] = useState({
-    extraShot: 0,
-    pearl: 0,
-    crystal: 0,
-    creamCheese: 0,
-    creamPuff: 0,
-    cheesecake: 0,
-    crushedOreo: 0,
-    coffeeJelly: 0,
-    whippedCream: 0,
+    extraShot: props.extraShot,
+    pearl: props.pearl,
+    crystal: props.crystal,
+    creamCheese: props.creamCheese,
+    creamPuff: props.creamPuff,
+    cheesecake: props.cheesecake,
+    crushedOreo: props.crushedOreo,
+    coffeeJelly: props.coffeeJelly,
+    whippedCream: props.whippedCream,
   });
 
   const handleClick = () => {
@@ -52,10 +52,20 @@ const IcedCoffeeAddOns = (props) => {
       drinkCategory: props.icedCoffee.drinkCategory,
     };
 
-    if (props.cart.length < 1) {
-      props.setCart([newItem]);
+    if (props.forEdit) {
+      console.log(newItem);
+      props.setCurrentCart((prev) => {
+        const updatedCart = [...prev];
+        updatedCart[props.positionToEdit] = newItem;
+        return updatedCart;
+      });
     } else {
-      props.setCart((prev) => [...prev, newItem]);
+      // HAVE TO CHANGE THIS TO A MORE CONSISTENT NAME
+      if (props.cart.length < 1) {
+        props.setCart([newItem]);
+      } else {
+        props.setCart((prev) => [...prev, newItem]);
+      }
     }
   };
 
@@ -74,7 +84,8 @@ const IcedCoffeeAddOns = (props) => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title">
-                Add Ons for {props.icedCoffee.drinkName}
+                {props.forEdit && "Edit"}Add Ons for
+                {props.icedCoffee.drinkName}
               </h5>
               <button
                 type="button"
@@ -93,7 +104,7 @@ const IcedCoffeeAddOns = (props) => {
                     className="size-checkbox-iced-coffee"
                     checked={size === "Medio"}
                     onChange={() => {
-                      setSize((prev) => (prev !== "Medio" ? "Medio" : ""));
+                      setSize("Medio");
                     }}
                   />
                   <div className="size">Medio</div>
@@ -104,7 +115,7 @@ const IcedCoffeeAddOns = (props) => {
                     className="size-checkbox-iced-coffee"
                     checked={size === "Hot"}
                     onChange={() => {
-                      setSize((prev) => (prev !== "Hot" ? "Hot" : ""));
+                      setSize("Hot");
                     }}
                   />
                   <div className="size">Hot</div>
@@ -115,7 +126,7 @@ const IcedCoffeeAddOns = (props) => {
                     className="size-checkbox-iced-coffee"
                     checked={size === "Grande"}
                     onChange={() => {
-                      setSize((prev) => (prev !== "Grande" ? "Grande" : ""));
+                      setSize("Grande");
                     }}
                   />
                   <div className="size">Grande</div>
@@ -223,7 +234,7 @@ const IcedCoffeeAddOns = (props) => {
                   props.onClose();
                 }}
               >
-                Add
+                {props.forEdit ? "Save" : "Add"}
               </button>
               <button
                 type="button"

@@ -46,7 +46,6 @@ const MilkTeaAddOns = (props) => {
     };
 
     if (props.forEdit) {
-      console.log("Im for the edit here in MilkTeaAddOns.jsx");
       console.log(newItem);
       props.setCurrentCart((prev) => {
         const updatedCart = [...prev];
@@ -214,7 +213,6 @@ const MilkTeaAddOns = (props) => {
                 className="btn btn-primary w-25"
                 onClick={() => {
                   // props.forEdit ? props.handleEdit() : handleClick();
-                  props.handleEdit();
                   handleClick();
                   props.onClose();
                 }}

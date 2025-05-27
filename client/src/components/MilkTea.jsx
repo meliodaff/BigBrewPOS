@@ -49,7 +49,6 @@ const MilkTea = (props) => {
           crushedOreo={0}
           coffeeJelly={0}
           whippedCream={0}
-          handleEdit={() => console.log("im a testing function")}
           forEdit={false}
           size={"Medio"}
         />

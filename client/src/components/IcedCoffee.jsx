@@ -41,6 +41,17 @@ const IcedCoffee = (props) => {
           medioPrice={29}
           grandePrice={39}
           hotPrice={39}
+          extraShot={0}
+          pearl={0}
+          crystal={0}
+          creamCheese={0}
+          creamPuff={0}
+          cheesecake={0}
+          crushedOreo={0}
+          coffeeJelly={0}
+          whippedCream={0}
+          forEdit={false}
+          size={"Medio"}
         />
       )}
     </>

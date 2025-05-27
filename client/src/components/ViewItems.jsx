@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import formatAddOnName from "../services/formatAddOnName";
 import RemoveModal from "./RemoveModal";
 import MilkTeaAddOns from "./MilkTeaAddOns";
+import IcedCoffeeAddOns from "./IcedCoffeeAddOns";
+import PrafAddOns from "./PrafAddOns";
 const ViewItems = (props) => {
   const [showRemoveModal, setShowRemoveModal] = useState(false);
   const [positionToRemove, setPositionToRemove] = useState(null);
@@ -21,17 +23,6 @@ const ViewItems = (props) => {
     setCurrentCart(updatedCart);
     setShowRemoveModal(false);
     // props.setCart(currentCart);
-  };
-
-  const handleEdit = () => {
-    console.log("im for editing function");
-    console.log(positionToEdit);
-    console.log(drinkToEdit);
-
-    // create a function that updates the details of a certain drink
-    // edited -- we can create the function right inside the milkteaaddons.jsx
-    // because im assuming that all the required details for me to edit the drink
-    // are there
   };
 
   useEffect(() => {
@@ -168,7 +159,57 @@ const ViewItems = (props) => {
           coffeeJelly={drinkToEdit.drinkAddOns.coffeeJelly}
           whippedCream={drinkToEdit.drinkAddOns.whippedCream}
           forEdit={true}
-          handleEdit={handleEdit}
+          currentCart={currentCart}
+          setCurrentCart={setCurrentCart}
+          positionToEdit={positionToEdit}
+          size={drinkToEdit.drinkSize}
+        />
+      ) : null}
+      {showEditModal && drinkToEdit.drinkCategory === "Iced Coffee" ? (
+        <IcedCoffeeAddOns
+          // milkTea={milkTeaForAddOns || ""}
+          icedCoffee={drinkToEdit}
+          onClose={() => setShowEditModal(false)}
+          cart={props.cart}
+          setCart={props.setCart}
+          medioPrice={29}
+          grandePrice={39}
+          hotPrice={39}
+          extraShot={0}
+          pearl={drinkToEdit.drinkAddOns.pearl}
+          crystal={drinkToEdit.drinkAddOns.crystal}
+          creamCheese={drinkToEdit.drinkAddOns.creamCheese}
+          creamPuff={drinkToEdit.drinkAddOns.creamPuff}
+          cheesecake={drinkToEdit.drinkAddOns.cheesecake}
+          crushedOreo={drinkToEdit.drinkAddOns.crushedOreo}
+          coffeeJelly={drinkToEdit.drinkAddOns.coffeeJelly}
+          whippedCream={drinkToEdit.drinkAddOns.whippedCream}
+          forEdit={true}
+          currentCart={currentCart}
+          setCurrentCart={setCurrentCart}
+          positionToEdit={positionToEdit}
+          size={drinkToEdit.drinkSize}
+        />
+      ) : null}
+      {showEditModal && drinkToEdit.drinkCategory === "Praf" ? (
+        <PrafAddOns
+          // milkTea={milkTeaForAddOns || ""}
+          praf={drinkToEdit}
+          onClose={() => setShowEditModal(false)}
+          cart={props.cart}
+          setCart={props.setCart}
+          medioPrice={39}
+          grandePrice={49}
+          extraShot={0}
+          pearl={drinkToEdit.drinkAddOns.pearl}
+          crystal={drinkToEdit.drinkAddOns.crystal}
+          creamCheese={drinkToEdit.drinkAddOns.creamCheese}
+          creamPuff={drinkToEdit.drinkAddOns.creamPuff}
+          cheesecake={drinkToEdit.drinkAddOns.cheesecake}
+          crushedOreo={drinkToEdit.drinkAddOns.crushedOreo}
+          coffeeJelly={drinkToEdit.drinkAddOns.coffeeJelly}
+          whippedCream={drinkToEdit.drinkAddOns.whippedCream}
+          forEdit={true}
           currentCart={currentCart}
           setCurrentCart={setCurrentCart}
           positionToEdit={positionToEdit}
