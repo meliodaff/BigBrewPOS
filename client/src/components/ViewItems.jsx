@@ -198,8 +198,8 @@ const ViewItems = (props) => {
           onClose={() => setShowEditModal(false)}
           cart={props.cart}
           setCart={props.setCart}
-          medioPrice={39}
-          grandePrice={49}
+          medioPrice={49}
+          grandePrice={59}
           extraShot={0}
           pearl={drinkToEdit.drinkAddOns.pearl}
           crystal={drinkToEdit.drinkAddOns.crystal}

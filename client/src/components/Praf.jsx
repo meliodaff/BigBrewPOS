@@ -39,8 +39,8 @@ const Praf = (props) => {
           onClose={() => setShowAddOns(false)}
           cart={props.cart}
           setCart={props.setCart}
-          medioPrice={39}
-          grandePrice={49}
+          medioPrice={49}
+          grandePrice={59}
           extraShot={0}
           pearl={0}
           crystal={0}
