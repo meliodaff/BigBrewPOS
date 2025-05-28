@@ -1,0 +1,32 @@
+.check-out-modal {
+  /* max-height: 480px; or any height you want */
+  overflow-y: auto;
+  height: 480px;
+}
+
+.input-money-container {
+  display: flex;
+  justify-content: center;
+}
+
+.input-money-container input {
+  width: 50%;
+  margin-left: 25%;
+}
+
+.money-buttons-container {
+  margin: 10px 0;
+}
+
+.money-buttons-container button {
+  margin-right: 15px;
+  border: 0;
+  padding: 5px 15px;
+  width: 60px;
+}
+
+.input-money-divider {
+  background-color: black;
+  height: 1px;
+  margin-bottom: 10px;
+}

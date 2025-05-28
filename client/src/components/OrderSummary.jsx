@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import ViewItems from "./ViewItems";
+import ProceedModal from "./ProceedModal";
 
 const OrderSummary = (props) => {
   const [showViewItems, setShowViewItems] = useState(false);
+  const [showProceedModal, setShowProceedModal] = useState(false);
 
   return (
     <>
@@ -14,7 +16,12 @@ const OrderSummary = (props) => {
           View Items
         </button>
         <div>Items: {props.cartItems}</div>
-        <button style={{ backgroundColor: "#5EB065" }}>Proceed</button>
+        <button
+          style={{ backgroundColor: "#5EB065" }}
+          onClick={() => setShowProceedModal(true)}
+        >
+          Proceed
+        </button>
         <div>Total: {props.totalPrice}</div>
       </div>
       {showViewItems && (
@@ -23,6 +30,15 @@ const OrderSummary = (props) => {
           setCart={props.setCart}
           myFunc={props.myFunc}
           onClose={() => setShowViewItems(false)}
+        />
+      )}
+
+      {showProceedModal && (
+        <ProceedModal
+          onClose={() => setShowProceedModal(false)}
+          cart={props.cart}
+          setCart={props.setCart}
+          price={props.totalPrice}
         />
       )}
     </>

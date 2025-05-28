@@ -1,11 +1,12 @@
 .items-modal {
-  max-height: 540px; /* or any height you want */
+  /* max-height: 540px; or any height you want */
   overflow-y: auto;
+  height: 540px;
 }
 
 .item-container {
   display: grid;
-  grid-template-columns: 110px 1.3fr 1fr;
+  grid-template-columns: 110px 1.7fr 1fr;
   grid-template-rows: auto auto auto;
   gap: 5px;
   padding: 10px;
@@ -41,5 +42,5 @@
 
 .remove-item {
   width: 50%;
-  margin-left: 40px;
+  margin-left: 15px;
 }
