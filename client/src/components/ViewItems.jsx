@@ -104,20 +104,24 @@ const ViewItems = (props) => {
               </div>
             </div>
             <div className="modal-footer d-flex justify-content-start">
-              <button
-                disabled={
-                  JSON.stringify(props.cart) === JSON.stringify(currentCart)
-                }
-                type="button"
-                className="btn btn-primary"
-                onClick={() => {
-                  props.myFunc();
-                  props.setCart(currentCart);
-                  props.onClose();
-                }}
-              >
-                Save changes
-              </button>
+              {props.cart.length > 0 && (
+                <div>
+                  <button
+                    disabled={
+                      JSON.stringify(props.cart) === JSON.stringify(currentCart)
+                    }
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={() => {
+                      props.myFunc();
+                      props.setCart(currentCart);
+                      props.onClose();
+                    }}
+                  >
+                    Save changes
+                  </button>{" "}
+                </div>
+              )}
               <button
                 type="button"
                 className="btn btn-secondary"
