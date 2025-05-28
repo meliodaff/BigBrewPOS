@@ -100,14 +100,16 @@ Balance: ${balance}
               </div>
             ) : null}
             <div className="modal-footer d-flex justify-content-start">
-              <button
-                type="button"
-                className="btn btn-success"
-                style={{ width: "35%" }}
-                onClick={handlePayment}
-              >
-                Check Out
-              </button>
+              {props.cart.length > 0 && (
+                <button
+                  type="button"
+                  className="btn btn-success"
+                  style={{ width: "35%" }}
+                  onClick={handlePayment}
+                >
+                  Check Out
+                </button>
+              )}
               <button
                 type="button"
                 className="btn btn-secondary"
