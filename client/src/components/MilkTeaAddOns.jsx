@@ -45,6 +45,12 @@ const MilkTeaAddOns = (props) => {
       drinkCategory: props.milkTea.drinkCategory,
     };
 
+    if (newItem.drinkSize === "Medio") {
+      props.setMedioCups((prev) => prev - 1); // i have to make a function where in the number of cups wont decrease when not checked out yet. That means i have to make a remaining cups variable to juts display so that the user is aware of the remaining cups
+    } else if (newItem.drinkSize === "Grande") {
+      console.log("minusing grande");
+    }
+
     if (props.forEdit) {
       console.log(newItem);
       props.setCurrentCart((prev) => {

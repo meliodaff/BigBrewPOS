@@ -5,6 +5,7 @@ import Praf from "./components/Praf";
 import IcedCoffee from "./components/IcedCoffee";
 import SettingsButton from "./components/SettingsButton";
 import OrderSummary from "./components/OrderSummary";
+import SettingsModal from "./components/SettingsModal";
 
 function App() {
   const [showMilkTeaProduct, setShowMilkTeaProduct] = useState(true);
@@ -17,6 +18,17 @@ function App() {
   const [totalPrice, setTotalPrice] = useState(0);
 
   const [cart, setCart] = useState([]);
+
+  const [medioCups, setMedioCups] = useState(100);
+  const [grandeCups, setGrandeCups] = useState(100);
+  const [domes, setDomes] = useState(100);
+  const [showSettingsModal, setShowSettingsModal] = useState(false);
+
+  useEffect(() => {
+    console.log(`${medioCups}
+${grandeCups}
+${domes}`);
+  }, [medioCups, grandeCups, domes]);
 
   useEffect(() => {
     let updatedTotal = 0;
@@ -41,10 +53,17 @@ function App() {
         setShowPrafProduct={setShowPrafProduct}
         setShowIcedCoffeeProduct={setShowIcedCoffeeProduct}
       />
-      {showMilkTeaProduct && <MilkTea cart={cart} setCart={setCart} />}
+      {showMilkTeaProduct && (
+        <MilkTea
+          cart={cart}
+          setCart={setCart}
+          medioCups={medioCups}
+          setMedioCups={setMedioCups}
+        />
+      )}
       {showPrafProduct && <Praf cart={cart} setCart={setCart} />}
       {showIcedCoffeeProduct && <IcedCoffee cart={cart} setCart={setCart} />}
-      <SettingsButton />
+      <SettingsButton setShowSettingsModal={setShowSettingsModal} />
       <OrderSummary
         cartItems={cart.length}
         totalPrice={totalPrice}
@@ -52,6 +71,17 @@ function App() {
         cart={cart}
         setCart={setCart}
       />
+      {showSettingsModal && (
+        <SettingsModal
+          onClose={() => setShowSettingsModal(false)}
+          medioCups={medioCups}
+          grandeCups={grandeCups}
+          domes={domes}
+          setMedioCups={setMedioCups}
+          setGrandeCups={setGrandeCups}
+          setDomes={setDomes}
+        />
+      )}
     </>
   );
 }

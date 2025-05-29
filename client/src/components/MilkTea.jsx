@@ -51,6 +51,8 @@ const MilkTea = (props) => {
           whippedCream={0}
           forEdit={false}
           size={"Medio"}
+          medioCups={props.medioCups}
+          setMedioCups={props.setMedioCups}
         />
       )}
     </>

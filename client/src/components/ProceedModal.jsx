@@ -96,10 +96,13 @@ Balance: ${balance}
                       </button>
                     </div>
                   </div>
-                </div>{" "}
+                </div>
               </div>
             ) : null}
-            <div className="modal-footer d-flex justify-content-start">
+            <div
+              className="modal-footer d-flex justify-content-start"
+              style={props.cart.length === 0 ? { marginTop: "60px" } : null}
+            >
               {props.cart.length > 0 && (
                 <button
                   type="button"
