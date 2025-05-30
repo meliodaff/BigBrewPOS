@@ -16,6 +16,13 @@ const MilkTeaAddOns = (props) => {
   });
 
   const handleClick = () => {
+    if (size === "Medio" && props.medioCups === 0) {
+      alert("Medio Cups has ran out");
+      return;
+    } else if (size === "Grande" && props.grandeCups === 0) {
+      alert("Grande Cups has ran out");
+      return;
+    }
     const priceForSize =
       size === "Medio" ? props.medioPrice : props.grandePrice;
     // const priceForAddOns = addOns.length * 9;
@@ -45,14 +52,16 @@ const MilkTeaAddOns = (props) => {
       drinkCategory: props.milkTea.drinkCategory,
     };
 
-    if (newItem.drinkSize === "Medio") {
-      props.setMedioCups((prev) => prev - 1); // i have to make a function where in the number of cups wont decrease when not checked out yet. That means i have to make a remaining cups variable to juts display so that the user is aware of the remaining cups
-    } else if (newItem.drinkSize === "Grande") {
-      console.log("minusing grande");
-    }
-
     if (props.forEdit) {
-      console.log(newItem);
+      if (props.currentCart[props.positionToEdit].drinkSize === "Medio") {
+        props.setReturnedMedioCups((prev) => prev + 1);
+        props.setReturnedGrandeCups((prev) => prev - 1);
+      } else if (
+        props.currentCart[props.positionToEdit].drinkSize === "Grande"
+      ) {
+        props.setReturnedMedioCups((prev) => prev - 1);
+        props.setReturnedGrandeCups((prev) => prev + 1);
+      }
       props.setCurrentCart((prev) => {
         const updatedCart = [...prev];
         updatedCart[props.positionToEdit] = newItem;
@@ -64,6 +73,12 @@ const MilkTeaAddOns = (props) => {
         props.setCart([newItem]);
       } else {
         props.setCart((prev) => [...prev, newItem]);
+      }
+
+      if (newItem.drinkSize === "Medio") {
+        props.setMedioCups((prev) => prev - 1); // i have to make a function where in the number of cups wont decrease when not checked out yet. That means i have to make a remaining cups variable to juts display so that the user is aware of the remaining cups
+      } else if (newItem.drinkSize === "Grande") {
+        props.setGrandeCups((prev) => prev - 1);
       }
     }
   };

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import formatAddOnName from "../services/formatAddOnName";
 import RemoveModal from "./RemoveModal";
 import MilkTeaAddOns from "./MilkTeaAddOns";
@@ -12,6 +12,8 @@ const ViewItems = (props) => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [drinkToEdit, setDrinkToEdit] = useState([]);
   const [positionToEdit, setPositionToEdit] = useState(null);
+  const [returnedMedioCups, setReturnedMedioCups] = useState(0);
+  const [returnedGrandeCups, setReturnedGrandeCups] = useState(0);
 
   useEffect(() => {
     setCurrentCart(props.cart);
@@ -19,6 +21,11 @@ const ViewItems = (props) => {
 
   const handleRemove = () => {
     const updatedCart = [...currentCart];
+    if (updatedCart[positionToRemove].drinkSize === "Medio") {
+      setReturnedMedioCups((prev) => prev + 1);
+    } else if (updatedCart[positionToRemove].drinkSize === "Grande") {
+      setReturnedGrandeCups((prev) => prev + 1);
+    }
     updatedCart.splice(positionToRemove, 1);
     setCurrentCart(updatedCart);
     setShowRemoveModal(false);
@@ -115,6 +122,8 @@ const ViewItems = (props) => {
                     onClick={() => {
                       props.myFunc();
                       props.setCart(currentCart);
+                      props.setMedioCups((prev) => prev + returnedMedioCups);
+                      props.setGrandeCups((prev) => prev + returnedGrandeCups);
                       props.onClose();
                     }}
                   >
@@ -167,6 +176,14 @@ const ViewItems = (props) => {
           setCurrentCart={setCurrentCart}
           positionToEdit={positionToEdit}
           size={drinkToEdit.drinkSize}
+          medioCups={props.medioCups}
+          setMedioCups={props.setMedioCups}
+          grandeCups={props.grandeCups}
+          setGrandeCups={props.setGrandeCups}
+          returnedMedioCups={returnedMedioCups}
+          returnedGrandeCups={returnedGrandeCups}
+          setReturnedMedioCups={setReturnedMedioCups}
+          setReturnedGrandeCups={setReturnedGrandeCups}
         />
       ) : null}
       {showEditModal && drinkToEdit.drinkCategory === "Iced Coffee" ? (

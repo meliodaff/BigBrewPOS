@@ -30,6 +30,10 @@ const OrderSummary = (props) => {
           setCart={props.setCart}
           myFunc={props.myFunc}
           onClose={() => setShowViewItems(false)}
+          medioCups={props.medioCups}
+          setMedioCups={props.setMedioCups}
+          grandeCups={props.grandeCups}
+          setGrandeCups={props.setGrandeCups}
         />
       )}
 

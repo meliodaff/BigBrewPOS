@@ -53,6 +53,8 @@ const MilkTea = (props) => {
           size={"Medio"}
           medioCups={props.medioCups}
           setMedioCups={props.setMedioCups}
+          grandeCups={props.grandeCups}
+          setGrandeCups={props.setGrandeCups}
         />
       )}
     </>

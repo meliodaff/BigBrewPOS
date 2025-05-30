@@ -34,6 +34,7 @@ const SettingsModal = (props) => {
               <span>Medio Cups: </span>
               <input
                 type="number"
+                placeholder="0"
                 value={currentMedioCups}
                 onChange={(e) => setCurrentMedipCups(e.target.value)}
               />

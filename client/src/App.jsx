@@ -59,6 +59,8 @@ ${domes}`);
           setCart={setCart}
           medioCups={medioCups}
           setMedioCups={setMedioCups}
+          grandeCups={grandeCups}
+          setGrandeCups={setGrandeCups}
         />
       )}
       {showPrafProduct && <Praf cart={cart} setCart={setCart} />}
@@ -70,6 +72,10 @@ ${domes}`);
         myFunc={myFunc}
         cart={cart}
         setCart={setCart}
+        medioCups={medioCups}
+        setMedioCups={setMedioCups}
+        grandeCups={grandeCups}
+        setGrandeCups={setGrandeCups}
       />
       {showSettingsModal && (
         <SettingsModal
