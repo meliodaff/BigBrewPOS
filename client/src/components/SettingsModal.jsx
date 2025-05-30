@@ -1,14 +1,18 @@
 import { useState } from "react";
 
 const SettingsModal = (props) => {
-  const [currentMedioCups, setCurrentMedipCups] = useState(props.medioCups);
-  const [currentGrandeCups, setCurrentGrandeCups] = useState(props.grandeCups);
-  const [currentDomes, setCurrentDomes] = useState(props.domes);
+  const [currentMedioCups, setCurrentMedipCups] = useState(
+    Number(props.medioCups)
+  );
+  const [currentGrandeCups, setCurrentGrandeCups] = useState(
+    Number(props.grandeCups)
+  );
+  const [currentDomes, setCurrentDomes] = useState(Number(props.domes));
 
   const handleClick = () => {
-    props.setMedioCups(currentMedioCups);
-    props.setGrandeCups(currentGrandeCups);
-    props.setDomes(currentDomes);
+    props.setMedioCups(Number(currentMedioCups));
+    props.setGrandeCups(Number(currentGrandeCups));
+    props.setDomes(Number(currentDomes));
     props.onClose();
   };
   return (
@@ -36,21 +40,21 @@ const SettingsModal = (props) => {
                 type="number"
                 placeholder="0"
                 value={currentMedioCups}
-                onChange={(e) => setCurrentMedipCups(e.target.value)}
+                onChange={(e) => setCurrentMedipCups(Number(e.target.value))}
               />
               <span>Grande Cups: </span>
               <input
                 type="number"
                 placeholder="0"
                 value={currentGrandeCups}
-                onChange={(e) => setCurrentGrandeCups(e.target.value)}
+                onChange={(e) => setCurrentGrandeCups(Number(e.target.value))}
               />
               <span>Domes: </span>
               <input
                 type="number"
                 placeholder="0"
                 value={currentDomes}
-                onChange={(e) => setCurrentDomes(e.target.value)}
+                onChange={(e) => setCurrentDomes(Number(e.target.value))}
               />
             </div>
             <div className="modal-footer">
