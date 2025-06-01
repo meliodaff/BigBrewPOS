@@ -36,12 +36,24 @@ const MilkTeaAddOns = (props) => {
   const isSaveDisabled = props.forEdit && areAddOnsEqual && isSizeSame;
 
   const handleClick = () => {
-    if (size === "Medio" && props.medioCups <= 0) {
-      alert("Medio Cups has ran out");
-      return;
-    } else if (size === "Grande" && props.grandeCups <= 0) {
-      alert("Grande Cups has ran out");
-      return;
+    if (!props.forEdit) {
+      if (size === "Medio" && props.medioCups <= 0) {
+        alert("Medio Cups has ran out");
+        return;
+      } else if (size === "Grande" && props.grandeCups <= 0) {
+        alert("Grande Cups has ran out");
+        return;
+      }
+    }
+
+    if (props.forEdit) {
+      if (size === "Medio" && props.currentMedioCups <= 0) {
+        alert("Medio Cups has ran out");
+        return;
+      } else if (size === "Grande" && props.currentGrandeCups <= 0) {
+        alert("Grande Cups has ran out");
+        return;
+      }
     }
 
     const priceForSize =
