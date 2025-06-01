@@ -36,10 +36,10 @@ const MilkTeaAddOns = (props) => {
   const isSaveDisabled = props.forEdit && areAddOnsEqual && isSizeSame;
 
   const handleClick = () => {
-    if (size === "Medio" && props.currentMedioCups <= 0) {
+    if (size === "Medio" && props.medioCups <= 0) {
       alert("Medio Cups has ran out");
       return;
-    } else if (size === "Grande" && props.currentGrandeCups <= 0) {
+    } else if (size === "Grande" && props.grandeCups <= 0) {
       alert("Grande Cups has ran out");
       return;
     }
@@ -86,16 +86,16 @@ const MilkTeaAddOns = (props) => {
         props.currentCart[props.positionToEdit].drinkSize === "Medio" &&
         originalSize !== size
       ) {
-        // props.setReturnedMedioCups((prev) => Number(prev + 1));
-        // props.setReturnedGrandeCups((prev) => Number(prev - 1));
+        props.setReturnedMedioCups((prev) => Number(prev + 1));
+        props.setReturnedGrandeCups((prev) => Number(prev - 1));
         props.setCurrentGrandeCups((prev) => prev - 1);
         props.setCurrentMedioCups((prev) => prev + 1);
       } else if (
         props.currentCart[props.positionToEdit].drinkSize === "Grande" &&
         originalSize !== size
       ) {
-        // props.setReturnedMedioCups((prev) => Number(prev - 1));
-        // props.setReturnedGrandeCups((prev) => Number(prev + 1));
+        props.setReturnedMedioCups((prev) => Number(prev - 1));
+        props.setReturnedGrandeCups((prev) => Number(prev + 1));
         props.setCurrentMedioCups((prev) => prev - 1);
         props.setCurrentGrandeCups((prev) => prev + 1);
       }

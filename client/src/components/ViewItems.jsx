@@ -25,8 +25,10 @@ const ViewItems = (props) => {
     const updatedCart = [...currentCart];
     if (updatedCart[positionToRemove].drinkSize === "Medio") {
       setReturnedMedioCups((prev) => prev + 1);
+      setCurrentMedioCups((prev) => prev + 1);
     } else if (updatedCart[positionToRemove].drinkSize === "Grande") {
       setReturnedGrandeCups((prev) => prev + 1);
+      setCurrentGrandeCups((prev) => prev + 1);
     }
     updatedCart.splice(positionToRemove, 1);
     setCurrentCart(updatedCart);
@@ -124,6 +126,7 @@ const ViewItems = (props) => {
                     onClick={() => {
                       props.myFunc();
                       props.setCart(currentCart);
+                      // my theory is that these two functions are just the same since i dndt remove setReturnedCups functions
                       // props.setMedioCups((prev) => prev + returnedMedioCups);
                       // props.setGrandeCups((prev) => prev + returnedGrandeCups);
                       props.setMedioCups(currentMedioCups);
