@@ -15,14 +15,35 @@ const MilkTeaAddOns = (props) => {
     whippedCream: props.whippedCream,
   });
 
+  const originalAddOns = {
+    extraShot: props.extraShot,
+    pearl: props.pearl,
+    crystal: props.crystal,
+    creamCheese: props.creamCheese,
+    creamPuff: props.creamPuff,
+    cheesecake: props.cheesecake,
+    crushedOreo: props.crushedOreo,
+    coffeeJelly: props.coffeeJelly,
+    whippedCream: props.whippedCream,
+  };
+
+  const originalSize = props.size;
+
+  const areAddOnsEqual =
+    JSON.stringify(originalAddOns) === JSON.stringify(addOns);
+  const isSizeSame = size === props.size;
+
+  const isSaveDisabled = props.forEdit && areAddOnsEqual && isSizeSame;
+
   const handleClick = () => {
-    if (size === "Medio" && props.medioCups <= 0) {
+    if (size === "Medio" && props.currentMedioCups <= 0) {
       alert("Medio Cups has ran out");
       return;
-    } else if (size === "Grande" && props.grandeCups <= 0) {
+    } else if (size === "Grande" && props.currentGrandeCups <= 0) {
       alert("Grande Cups has ran out");
       return;
     }
+
     const priceForSize =
       size === "Medio" ? props.medioPrice : props.grandePrice;
     // const priceForAddOns = addOns.length * 9;
@@ -53,14 +74,30 @@ const MilkTeaAddOns = (props) => {
     };
 
     if (props.forEdit) {
-      if (props.currentCart[props.positionToEdit].drinkSize === "Medio") {
-        props.setReturnedMedioCups((prev) => Number(prev + 1));
-        props.setReturnedGrandeCups((prev) => Number(prev - 1));
-      } else if (
-        props.currentCart[props.positionToEdit].drinkSize === "Grande"
+      if (size === "Medio" && props.currentMedioCups <= 0) {
+        alert("Medio Cups has ran out");
+        return;
+      } else if (size === "Grande" && props.currentGrandeCups <= 0) {
+        alert("Grande Cups has ran out");
+        return;
+      }
+
+      if (
+        props.currentCart[props.positionToEdit].drinkSize === "Medio" &&
+        originalSize !== size
       ) {
-        props.setReturnedMedioCups((prev) => Number(prev - 1));
-        props.setReturnedGrandeCups((prev) => Number(prev + 1));
+        // props.setReturnedMedioCups((prev) => Number(prev + 1));
+        // props.setReturnedGrandeCups((prev) => Number(prev - 1));
+        props.setCurrentGrandeCups((prev) => prev - 1);
+        props.setCurrentMedioCups((prev) => prev + 1);
+      } else if (
+        props.currentCart[props.positionToEdit].drinkSize === "Grande" &&
+        originalSize !== size
+      ) {
+        // props.setReturnedMedioCups((prev) => Number(prev - 1));
+        // props.setReturnedGrandeCups((prev) => Number(prev + 1));
+        props.setCurrentMedioCups((prev) => prev - 1);
+        props.setCurrentGrandeCups((prev) => prev + 1);
       }
       props.setCurrentCart((prev) => {
         const updatedCart = [...prev];
@@ -81,6 +118,8 @@ const MilkTeaAddOns = (props) => {
         props.setGrandeCups((prev) => Number(prev - 1));
       }
     }
+    console.log(props.cart);
+    console.log(props.currentCart);
   };
 
   useEffect(() => {
@@ -96,7 +135,7 @@ const MilkTeaAddOns = (props) => {
       >
         <div className="modal-dialog">
           <div className="modal-content">
-            <div className="modal-header">
+            <div className="modal-header" style={{ paddingTop: "10px" }}>
               <h5 className="modal-title">
                 {props.forEdit && "Edit"} Add Ons for {props.milkTea.drinkName}
               </h5>
@@ -123,6 +162,9 @@ const MilkTeaAddOns = (props) => {
                   }}
                 />
                 <div className="size">Medio</div>
+                <div className="remaining-cups-container">
+                  <strong>Remaining Cups:</strong>
+                </div>
                 <input
                   type="checkbox"
                   className="size-checkbox"
@@ -134,6 +176,20 @@ const MilkTeaAddOns = (props) => {
                   }}
                 />
                 <div className="size">Grande</div>
+                <div className="remaining-cups-container">
+                  <div>
+                    Medio:{" "}
+                    {props.forEdit ? props.currentMedioCups : props.medioCups}
+                  </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div className="remaining-cups-container">
+                  <div>
+                    Grande:{" "}
+                    {props.forEdit ? props.currentGrandeCups : props.grandeCups}
+                  </div>
+                </div>
               </div>
               <div className="divider-add-ons"></div>
 
@@ -230,6 +286,7 @@ const MilkTeaAddOns = (props) => {
               }}
             >
               <button
+                disabled={isSaveDisabled}
                 type="button"
                 className="btn btn-primary w-25"
                 onClick={() => {

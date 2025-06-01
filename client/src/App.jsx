@@ -19,9 +19,9 @@ function App() {
 
   const [cart, setCart] = useState([]);
 
-  const [medioCups, setMedioCups] = useState(100);
-  const [grandeCups, setGrandeCups] = useState(100);
-  const [domes, setDomes] = useState(100);
+  const [medioCups, setMedioCups] = useState(5);
+  const [grandeCups, setGrandeCups] = useState(5);
+  const [domes, setDomes] = useState(5);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
 
   useEffect(() => {

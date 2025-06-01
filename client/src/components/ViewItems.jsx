@@ -14,6 +14,8 @@ const ViewItems = (props) => {
   const [positionToEdit, setPositionToEdit] = useState(null);
   const [returnedMedioCups, setReturnedMedioCups] = useState(0);
   const [returnedGrandeCups, setReturnedGrandeCups] = useState(0);
+  const [currentMedioCups, setCurrentMedioCups] = useState(props.medioCups);
+  const [currentGrandeCups, setCurrentGrandeCups] = useState(props.grandeCups);
 
   useEffect(() => {
     setCurrentCart(props.cart);
@@ -122,8 +124,10 @@ const ViewItems = (props) => {
                     onClick={() => {
                       props.myFunc();
                       props.setCart(currentCart);
-                      props.setMedioCups((prev) => prev + returnedMedioCups);
-                      props.setGrandeCups((prev) => prev + returnedGrandeCups);
+                      // props.setMedioCups((prev) => prev + returnedMedioCups);
+                      // props.setGrandeCups((prev) => prev + returnedGrandeCups);
+                      props.setMedioCups(currentMedioCups);
+                      props.setGrandeCups(currentGrandeCups);
                       props.onClose();
                     }}
                   >
@@ -184,6 +188,10 @@ const ViewItems = (props) => {
           returnedGrandeCups={returnedGrandeCups}
           setReturnedMedioCups={setReturnedMedioCups}
           setReturnedGrandeCups={setReturnedGrandeCups}
+          currentMedioCups={currentMedioCups}
+          currentGrandeCups={currentGrandeCups}
+          setCurrentMedioCups={setCurrentMedioCups}
+          setCurrentGrandeCups={setCurrentGrandeCups}
         />
       ) : null}
       {showEditModal && drinkToEdit.drinkCategory === "Iced Coffee" ? (

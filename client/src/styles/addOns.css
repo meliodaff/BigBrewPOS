@@ -1,7 +1,10 @@
 .sizes-container {
   display: grid;
-  grid-template-columns: 20% 40%;
+  grid-template-columns: 20% 40% 50%;
   row-gap: 10px;
+}
+
+.remaining-cups-container {
 }
 
 .sizes-container-iced-coffee {
@@ -51,5 +54,5 @@
   background-color: rgba(0, 0, 0, 0.272);
   width: 340px;
   height: 1px;
-  margin: 10px 0;
+  margin: 3px 0;
 }
