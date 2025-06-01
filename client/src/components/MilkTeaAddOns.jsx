@@ -46,15 +46,15 @@ const MilkTeaAddOns = (props) => {
       }
     }
 
-    if (props.forEdit) {
-      if (size === "Medio" && props.currentMedioCups <= 0) {
-        alert("Medio Cups has ran out");
-        return;
-      } else if (size === "Grande" && props.currentGrandeCups <= 0) {
-        alert("Grande Cups has ran out");
-        return;
-      }
-    }
+    // if (props.forEdit) {
+    //   if (size === "Medio" && props.currentMedioCups <= 0) {
+    //     alert("Medio Cups has ran out");
+    //     return;
+    //   } else if (size === "Grande" && props.currentGrandeCups <= 0) {
+    //     alert("Grande Cups has ran out");
+    //     return;
+    //   }
+    // }
 
     const priceForSize =
       size === "Medio" ? props.medioPrice : props.grandePrice;
@@ -86,10 +86,18 @@ const MilkTeaAddOns = (props) => {
     };
 
     if (props.forEdit) {
-      if (size === "Medio" && props.currentMedioCups <= 0) {
-        alert("Medio Cups has ran out");
+      if (
+        size === "Medio" &&
+        props.currentMedioCups <= 0 &&
+        originalSize !== size
+      ) {
+        alert("Medio Cups has ran oadsut");
         return;
-      } else if (size === "Grande" && props.currentGrandeCups <= 0) {
+      } else if (
+        size === "Grande" &&
+        props.currentGrandeCups <= 0 &&
+        originalSize !== size
+      ) {
         alert("Grande Cups has ran out");
         return;
       }
