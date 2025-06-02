@@ -36,6 +36,8 @@ const OrderSummary = (props) => {
           setGrandeCups={props.setGrandeCups}
           straws={props.straws}
           setStraws={props.setStraws}
+          domes={props.domes}
+          setDomes={props.setDomes}
         />
       )}
 

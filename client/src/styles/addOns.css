@@ -1,6 +1,7 @@
 .sizes-container {
   display: grid;
   grid-template-columns: 20% 40% 50%;
+  /* grid-template-rows: 1fr 1fr 1fr 1fr; */
   row-gap: 10px;
 }
 

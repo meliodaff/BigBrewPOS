@@ -162,7 +162,10 @@ const MilkTeaAddOns = (props) => {
       >
         <div className="modal-dialog">
           <div className="modal-content">
-            <div className="modal-header" style={{ paddingTop: "10px" }}>
+            <div
+              className="modal-header"
+              style={{ paddingTop: "5px", paddingBottom: "2px" }}
+            >
               <h5 className="modal-title">
                 {props.forEdit && "Edit"} Add Ons for {props.milkTea.drinkName}
               </h5>
@@ -175,7 +178,7 @@ const MilkTeaAddOns = (props) => {
               ></button>
             </div>
             <div className="modal-body" style={{ paddingTop: "0" }}>
-              <h3>Sizes:</h3>
+              <h4>Sizes:</h4>
               <div className="sizes-container">
                 <input
                   type="checkbox"
@@ -217,10 +220,17 @@ const MilkTeaAddOns = (props) => {
                     {props.forEdit ? props.currentGrandeCups : props.grandeCups}
                   </div>
                 </div>
+                <div></div>
+                <div></div>
+                <div className="remaining-cups-container">
+                  <div>
+                    Straws: {props.forEdit ? props.currentStraws : props.straws}
+                  </div>
+                </div>
               </div>
               <div className="divider-add-ons"></div>
 
-              <h3>Add Ons:</h3>
+              <h4>Add Ons:</h4>
               <div className="add-ons-container">
                 {Object.entries(addOns).map(([key, value], index) => (
                   <div key={index}>

@@ -66,7 +66,20 @@ ${domes}`);
           setStraws={setStraws}
         />
       )}
-      {showPrafProduct && <Praf cart={cart} setCart={setCart} />}
+      {showPrafProduct && (
+        <Praf
+          cart={cart}
+          setCart={setCart}
+          medioCups={medioCups}
+          setMedioCups={setMedioCups}
+          grandeCups={grandeCups}
+          setGrandeCups={setGrandeCups}
+          straws={straws}
+          setStraws={setStraws}
+          domes={domes}
+          setDomes={setDomes}
+        />
+      )}
       {showIcedCoffeeProduct && <IcedCoffee cart={cart} setCart={setCart} />}
       <SettingsButton setShowSettingsModal={setShowSettingsModal} />
       <OrderSummary
@@ -81,6 +94,8 @@ ${domes}`);
         setGrandeCups={setGrandeCups}
         straws={straws}
         setStraws={setStraws}
+        domes={domes}
+        setDomes={setDomes}
       />
       {showSettingsModal && (
         <SettingsModal

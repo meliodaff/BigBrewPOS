@@ -17,6 +17,7 @@ const ViewItems = (props) => {
   const [currentMedioCups, setCurrentMedioCups] = useState(props.medioCups);
   const [currentGrandeCups, setCurrentGrandeCups] = useState(props.grandeCups);
   const [currentStraws, setCurrentStraws] = useState(props.straws);
+  const [currentDomes, setCurrentDomes] = useState(props.domes);
 
   useEffect(() => {
     setCurrentCart(props.cart);
@@ -24,7 +25,12 @@ const ViewItems = (props) => {
 
   const handleRemove = () => {
     setCurrentStraws((prev) => prev + 1);
+
     const updatedCart = [...currentCart];
+
+    if (updatedCart[positionToRemove].drinkCategory === "Praf") {
+      setCurrentDomes((prev) => prev + 1);
+    }
 
     if (updatedCart[positionToRemove].drinkSize === "Medio") {
       setReturnedMedioCups((prev) => prev + 1);
@@ -134,6 +140,7 @@ const ViewItems = (props) => {
                       // props.setGrandeCups((prev) => prev + returnedGrandeCups);
                       props.setMedioCups(currentMedioCups);
                       props.setGrandeCups(currentGrandeCups);
+                      props.setDomes(currentDomes);
                       props.setStraws(currentStraws);
                       props.onClose();
                     }}
@@ -191,6 +198,8 @@ const ViewItems = (props) => {
           setMedioCups={props.setMedioCups}
           grandeCups={props.grandeCups}
           setGrandeCups={props.setGrandeCups}
+          straws={props.straws}
+          setStraws={props.setStraws}
           returnedMedioCups={returnedMedioCups}
           returnedGrandeCups={returnedGrandeCups}
           setReturnedMedioCups={setReturnedMedioCups}
@@ -199,6 +208,8 @@ const ViewItems = (props) => {
           currentGrandeCups={currentGrandeCups}
           setCurrentMedioCups={setCurrentMedioCups}
           setCurrentGrandeCups={setCurrentGrandeCups}
+          currentStraws={currentStraws}
+          setCurrentStraws={setCurrentStraws}
         />
       ) : null}
       {showEditModal && drinkToEdit.drinkCategory === "Iced Coffee" ? (
@@ -250,6 +261,22 @@ const ViewItems = (props) => {
           setCurrentCart={setCurrentCart}
           positionToEdit={positionToEdit}
           size={drinkToEdit.drinkSize}
+          medioCups={props.medioCups}
+          setMedioCups={props.setMedioCups}
+          grandeCups={props.grandeCups}
+          setGrandeCups={props.setGrandeCups}
+          straws={props.straws}
+          setStraws={props.setStraws}
+          returnedMedioCups={returnedMedioCups}
+          returnedGrandeCups={returnedGrandeCups}
+          setReturnedMedioCups={setReturnedMedioCups}
+          setReturnedGrandeCups={setReturnedGrandeCups}
+          currentMedioCups={currentMedioCups}
+          currentGrandeCups={currentGrandeCups}
+          setCurrentMedioCups={setCurrentMedioCups}
+          setCurrentGrandeCups={setCurrentGrandeCups}
+          currentStraws={currentStraws}
+          setCurrentStraws={setCurrentStraws}
         />
       ) : null}
     </>
