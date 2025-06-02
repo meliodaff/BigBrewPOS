@@ -21,6 +21,7 @@ function App() {
 
   const [medioCups, setMedioCups] = useState(5);
   const [grandeCups, setGrandeCups] = useState(5);
+  const [straws, setStraws] = useState(5);
   const [domes, setDomes] = useState(5);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
 
@@ -61,6 +62,8 @@ ${domes}`);
           setMedioCups={setMedioCups}
           grandeCups={grandeCups}
           setGrandeCups={setGrandeCups}
+          straws={straws}
+          setStraws={setStraws}
         />
       )}
       {showPrafProduct && <Praf cart={cart} setCart={setCart} />}
@@ -76,6 +79,8 @@ ${domes}`);
         setMedioCups={setMedioCups}
         grandeCups={grandeCups}
         setGrandeCups={setGrandeCups}
+        straws={straws}
+        setStraws={setStraws}
       />
       {showSettingsModal && (
         <SettingsModal
@@ -86,6 +91,8 @@ ${domes}`);
           setMedioCups={setMedioCups}
           setGrandeCups={setGrandeCups}
           setDomes={setDomes}
+          straws={straws}
+          setStraws={setStraws}
         />
       )}
     </>

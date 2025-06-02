@@ -44,6 +44,11 @@ const MilkTeaAddOns = (props) => {
         alert("Grande Cups has ran out");
         return;
       }
+
+      if (props.straws <= 0) {
+        alert("Straws has ran out");
+        return;
+      }
     }
 
     // if (props.forEdit) {
@@ -91,7 +96,7 @@ const MilkTeaAddOns = (props) => {
         props.currentMedioCups <= 0 &&
         originalSize !== size
       ) {
-        alert("Medio Cups has ran oadsut");
+        alert("Medio Cups has ran out");
         return;
       } else if (
         size === "Grande" &&
@@ -131,6 +136,8 @@ const MilkTeaAddOns = (props) => {
       } else {
         props.setCart((prev) => [...prev, newItem]);
       }
+
+      props.setStraws((prev) => prev - 1);
 
       if (newItem.drinkSize === "Medio") {
         props.setMedioCups((prev) => Number(prev - 1)); // i have to make a function where in the number of cups wont decrease when not checked out yet. That means i have to make a remaining cups variable to juts display so that the user is aware of the remaining cups

@@ -9,10 +9,13 @@ const SettingsModal = (props) => {
   );
   const [currentDomes, setCurrentDomes] = useState(Number(props.domes));
 
+  const [currentStraws, setCurrentStraws] = useState(Number(props.straws));
+
   const handleClick = () => {
     props.setMedioCups(Number(currentMedioCups));
     props.setGrandeCups(Number(currentGrandeCups));
     props.setDomes(Number(currentDomes));
+    props.setStraws(Number(currentStraws));
     props.onClose();
   };
   return (
@@ -48,6 +51,13 @@ const SettingsModal = (props) => {
                 placeholder="0"
                 value={currentGrandeCups}
                 onChange={(e) => setCurrentGrandeCups(Number(e.target.value))}
+              />
+              <span>Straws: </span>
+              <input
+                type="number"
+                placeholder="0"
+                value={currentStraws}
+                onChange={(e) => setCurrentStraws(Number(e.target.value))}
               />
               <span>Domes: </span>
               <input

@@ -16,13 +16,16 @@ const ViewItems = (props) => {
   const [returnedGrandeCups, setReturnedGrandeCups] = useState(0);
   const [currentMedioCups, setCurrentMedioCups] = useState(props.medioCups);
   const [currentGrandeCups, setCurrentGrandeCups] = useState(props.grandeCups);
+  const [currentStraws, setCurrentStraws] = useState(props.straws);
 
   useEffect(() => {
     setCurrentCart(props.cart);
   }, []);
 
   const handleRemove = () => {
+    setCurrentStraws((prev) => prev + 1);
     const updatedCart = [...currentCart];
+
     if (updatedCart[positionToRemove].drinkSize === "Medio") {
       setReturnedMedioCups((prev) => prev + 1);
       setCurrentMedioCups((prev) => prev + 1);
@@ -131,6 +134,7 @@ const ViewItems = (props) => {
                       // props.setGrandeCups((prev) => prev + returnedGrandeCups);
                       props.setMedioCups(currentMedioCups);
                       props.setGrandeCups(currentGrandeCups);
+                      props.setStraws(currentStraws);
                       props.onClose();
                     }}
                   >
