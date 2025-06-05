@@ -17,6 +17,8 @@ const ProceedModal = (props) => {
     alert(`Sufficient payment
 Balance: ${balance}
         `);
+    props.setCart([]); // when the user checks out the items, the cart will reset to zero items
+    props.onClose();
   };
   return (
     <>
