@@ -10,6 +10,11 @@ datasource db {
 model orders {
     order_id Int @id @default(autoincrement())
     drink_name String
+    drink_size String
+    drink_price Int
+    drink_image String
+    drink_category String
+    drink_add_ons Json
     created_at DateTime @default(now())
 }
 

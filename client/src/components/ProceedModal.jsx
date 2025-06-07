@@ -1,13 +1,19 @@
 import { useEffect, useState } from "react";
 import formatAddOnName from "../services/formatAddOnName";
+import useCreateOrder from "../services/createOrder";
+import useCreateOrders from "../services/createOrders";
+
 const ProceedModal = (props) => {
   const [payment, setPayment] = useState(0);
-
+  const { responseForCreateOrder, loadingForCreateOrder, createOrder } =
+    useCreateOrder();
+  const { responseForCreateOrders, loadingForCreateOrders, createOrders } =
+    useCreateOrders();
   const handleMoneyClick = (money) => {
     setPayment(money);
   };
 
-  const handlePayment = () => {
+  const handlePayment = async () => {
     if (props.price > payment) {
       alert("Insufficient payment");
       return;
@@ -15,8 +21,17 @@ const ProceedModal = (props) => {
 
     const balance = payment - props.price;
     alert(`Sufficient payment
-Balance: ${balance}
-        `);
+      Balance: ${balance}
+      `);
+
+    if (props.cart.length > 1) {
+      const response = await createOrders(props.cart);
+      console.log(response);
+    } else {
+      const response = await createOrder(props.cart);
+      console.log(response);
+    }
+
     props.setCart([]); // when the user checks out the items, the cart will reset to zero items
     props.onClose();
   };

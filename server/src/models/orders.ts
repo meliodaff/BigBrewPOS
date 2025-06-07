@@ -1,5 +1,9 @@
 export interface Order {
-  orderId: number;
   drinkName: string;
+  drinkSize: string;
+  price: number;
+  drinkImage: string;
+  drinkCategory: string;
+  drinkAddOns: any;
   createdAt: Date;
 }
