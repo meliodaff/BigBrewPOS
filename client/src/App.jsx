@@ -80,7 +80,20 @@ ${domes}`);
           setDomes={setDomes}
         />
       )}
-      {showIcedCoffeeProduct && <IcedCoffee cart={cart} setCart={setCart} />}
+      {showIcedCoffeeProduct && (
+        <IcedCoffee
+          cart={cart}
+          setCart={setCart}
+          medioCups={medioCups}
+          setMedioCups={setMedioCups}
+          grandeCups={grandeCups}
+          setGrandeCups={setGrandeCups}
+          straws={straws}
+          setStraws={setStraws}
+          domes={domes}
+          setDomes={setDomes}
+        />
+      )}
       <SettingsButton setShowSettingsModal={setShowSettingsModal} />
       <OrderSummary
         cartItems={cart.length}

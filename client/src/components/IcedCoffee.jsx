@@ -52,6 +52,14 @@ const IcedCoffee = (props) => {
           whippedCream={0}
           forEdit={false}
           size={"Medio"}
+          medioCups={props.medioCups}
+          setMedioCups={props.setMedioCups}
+          grandeCups={props.grandeCups}
+          setGrandeCups={props.setGrandeCups}
+          straws={props.straws}
+          setStraws={props.setStraws}
+          domes={props.domes}
+          setDomes={props.setDomes}
         />
       )}
     </>

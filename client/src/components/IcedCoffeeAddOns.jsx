@@ -15,7 +15,46 @@ const IcedCoffeeAddOns = (props) => {
     whippedCream: props.whippedCream,
   });
 
+  const originalAddOns = {
+    extraShot: props.extraShot,
+    pearl: props.pearl,
+    crystal: props.crystal,
+    creamCheese: props.creamCheese,
+    creamPuff: props.creamPuff,
+    cheesecake: props.cheesecake,
+    crushedOreo: props.crushedOreo,
+    coffeeJelly: props.coffeeJelly,
+    whippedCream: props.whippedCream,
+  };
+
+  const originalSize = props.size;
+
+  const areAddOnsEqual =
+    JSON.stringify(originalAddOns) === JSON.stringify(addOns);
+  const isSizeSame = size === props.size;
+
+  const isSaveDisabled = props.forEdit && areAddOnsEqual && isSizeSame;
+
   const handleClick = () => {
+    if (!props.forEdit) {
+      if (size === "Medio" && props.medioCups <= 0) {
+        alert("Medio Cups has ran out");
+        return;
+      } else if (size === "Grande" && props.grandeCups <= 0) {
+        alert("Grande Cups has ran out");
+        return;
+      }
+
+      if (props.straws <= 0) {
+        alert("Straws has ran out");
+        return;
+      }
+
+      if (props.domes <= 0) {
+        alert("Domes has ran out");
+        return;
+      }
+    }
     const priceForSize =
       size === "Medio"
         ? props.medioPrice
@@ -53,6 +92,40 @@ const IcedCoffeeAddOns = (props) => {
     };
 
     if (props.forEdit) {
+      if (
+        size === "Medio" &&
+        props.currentMedioCups <= 0 &&
+        originalSize !== size
+      ) {
+        alert("Medio Cups has ran out");
+        return;
+      } else if (
+        size === "Grande" &&
+        props.currentGrandeCups <= 0 &&
+        originalSize !== size
+      ) {
+        alert("Grande Cups has ran out");
+        return;
+      }
+
+      if (
+        props.currentCart[props.positionToEdit].drinkSize === "Medio" &&
+        originalSize !== size
+      ) {
+        props.setReturnedMedioCups((prev) => Number(prev + 1));
+        props.setReturnedGrandeCups((prev) => Number(prev - 1));
+        props.setCurrentGrandeCups((prev) => prev - 1);
+        props.setCurrentMedioCups((prev) => prev + 1);
+      } else if (
+        props.currentCart[props.positionToEdit].drinkSize === "Grande" &&
+        originalSize !== size
+      ) {
+        props.setReturnedMedioCups((prev) => Number(prev - 1));
+        props.setReturnedGrandeCups((prev) => Number(prev + 1));
+        props.setCurrentMedioCups((prev) => prev - 1);
+        props.setCurrentGrandeCups((prev) => prev + 1);
+      }
+
       console.log(newItem);
       props.setCurrentCart((prev) => {
         const updatedCart = [...prev];
@@ -65,6 +138,15 @@ const IcedCoffeeAddOns = (props) => {
         props.setCart([newItem]);
       } else {
         props.setCart((prev) => [...prev, newItem]);
+      }
+
+      props.setStraws((prev) => prev - 1);
+      props.setDomes((prev) => prev - 1);
+
+      if (newItem.drinkSize === "Medio") {
+        props.setMedioCups((prev) => Number(prev - 1)); // i have to make a function where in the number of cups wont decrease when not checked out yet. That means i have to make a remaining cups variable to juts display so that the user is aware of the remaining cups
+      } else if (newItem.drinkSize === "Grande") {
+        props.setGrandeCups((prev) => Number(prev - 1));
       }
     }
   };
@@ -82,7 +164,10 @@ const IcedCoffeeAddOns = (props) => {
       >
         <div className="modal-dialog">
           <div className="modal-content">
-            <div className="modal-header">
+            <div
+              className="modal-header"
+              style={{ paddingTop: "5px", paddingBottom: "2px" }}
+            >
               <h5 className="modal-title">
                 {props.forEdit && "Edit"}Add Ons for
                 {props.icedCoffee.drinkName}
@@ -96,48 +181,57 @@ const IcedCoffeeAddOns = (props) => {
               ></button>
             </div>
             <div className="modal-body" style={{ paddingTop: "0" }}>
-              <h3>Sizes:</h3>
-              <div className="sizes-container-iced-coffee">
-                <div className="size-details-container">
-                  <input
-                    type="checkbox"
-                    className="size-checkbox-iced-coffee"
-                    checked={size === "Medio"}
-                    onChange={() => {
-                      setSize("Medio");
-                    }}
-                  />
-                  <div className="size">Medio</div>
+              <h4>Sizes:</h4>
+              <div className="sizes-container">
+                <input
+                  type="checkbox"
+                  className="size-checkbox"
+                  checked={size === "Medio"}
+                  onChange={() => {
+                    setSize("Medio");
+                  }}
+                />
+                <div className="size">Medio</div>
+                <div className="remaining-cups-container">
+                  <strong>Remaining Cups:</strong>
                 </div>
-                <div className="size-details-container">
-                  <input
-                    type="checkbox"
-                    className="size-checkbox-iced-coffee"
-                    checked={size === "Hot"}
-                    onChange={() => {
-                      setSize("Hot");
-                    }}
-                  />
-                  <div className="size">Hot</div>
+                <input
+                  type="checkbox"
+                  className="size-checkbox"
+                  checked={size === "Grande"}
+                  onChange={() => {
+                    setSize("Grande");
+                  }}
+                />
+                <div className="size">Grande</div>
+                <div className="remaining-cups-container">
+                  <div>
+                    Medio:{" "}
+                    {props.forEdit ? props.currentMedioCups : props.medioCups}
+                  </div>
                 </div>
-                <div className="size-details-container">
-                  <input
-                    type="checkbox"
-                    className="size-checkbox-iced-coffee"
-                    checked={size === "Grande"}
-                    onChange={() => {
-                      setSize("Grande");
-                    }}
-                  />
-                  <div className="size">Grande</div>
+                <div></div>
+                <div></div>
+                <div className="remaining-cups-container">
+                  <div>
+                    Grande:{" "}
+                    {props.forEdit ? props.currentGrandeCups : props.grandeCups}
+                  </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div className="remaining-cups-container">
+                  <div>
+                    Straws: {props.forEdit ? props.currentStraws : props.straws}
+                  </div>
                 </div>
               </div>
               <div className="divider-add-ons"></div>
 
-              <h3>Add Ons:</h3>
+              <h4>Add Ons:</h4>
               <div className="add-ons-container">
                 {Object.entries(addOns).map(([key, value], index) => (
-                  <div key={index} className="">
+                  <div key={index}>
                     <button
                       disabled={
                         key === "extraShot" &&
@@ -159,7 +253,7 @@ const IcedCoffeeAddOns = (props) => {
                     <button
                       disabled={
                         key === "extraShot" &&
-                        props.icedCoffee.drinkName !== "Salted Caramel"
+                        props.icedCoffee.drinkName !== "Coffee Jelly"
                       }
                       onClick={() => {
                         if (addOns[key] <= 0) {
@@ -189,34 +283,6 @@ const IcedCoffeeAddOns = (props) => {
                     <div className="add-ons-name">{formatAddOnName(key)}</div>
                   </div>
                 ))}
-
-                {/* {availableAddOns.map((item, index) => (
-                  <>
-                    <input
-                      type="number"
-                      className="add-ons-checkbox"
-                      disabled={
-                        item === "Extra Shot" &&
-                        props.milkTea.drinkName !== "Salted Caramel"
-                      }
-                      value={item}
-                      // checked={addOns.includes(item)}
-                      onChange={(e) => {
-                        const value = e.target.value;
-                        if (e.target.checked) {
-                          // Add to list
-                          setAddOns((prev) => [...prev, value]);
-                        } else {
-                          // Remove from list
-                          setAddOns((prev) =>
-                            prev.filter((addOn) => addOn !== value)
-                          );
-                        }
-                      }}
-                    />
-                    <div className="add-ons-name">{item}</div>
-                  </>
-                ))} */}
               </div>
             </div>
             <div

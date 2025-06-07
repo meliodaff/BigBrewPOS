@@ -218,6 +218,13 @@ const PrafAddOns = (props) => {
                 <div></div>
                 <div className="remaining-cups-container">
                   <div>
+                    Domes: {props.forEdit ? props.currentDomes : props.domes}
+                  </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div className="remaining-cups-container">
+                  <div>
                     Straws: {props.forEdit ? props.currentStraws : props.straws}
                   </div>
                 </div>
