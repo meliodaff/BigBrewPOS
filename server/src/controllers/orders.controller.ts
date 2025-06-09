@@ -1,12 +1,30 @@
 import { PrismaClient } from "@prisma/client";
 import { Request, Response } from "express";
-import { Order } from "../models/orders";
+import { OrderInterface } from "../models/orders";
+
 const prisma = new PrismaClient();
+
+interface UserInterface {
+  id: number;
+  name: string;
+  age?: number;
+  greet(): string;
+}
+
+const user: UserInterface = {
+  id: 1,
+  name: "jay",
+  greet() {
+    return `Hi im ${this.name}`;
+  },
+};
+
+console.log(user.greet());
 
 export const getOrders = async (req: Request, res: Response) => {
   try {
     const rawOrders = await prisma.orders.findMany();
-
+    console.log(rawOrders);
     // the reason i formatted it is because i tried to only get the time of the createdAt entity
     const formattedOrders = rawOrders.map((order) => {
       return {
@@ -33,7 +51,7 @@ export const getOrders = async (req: Request, res: Response) => {
 };
 
 export const createOrder = async (req: Request, res: Response) => {
-  const data = req.body[0];
+  const data: OrderInterface = req.body[0];
   if (!data) {
     res.status(400).json({ message: "Drink name is null" });
     return;
@@ -53,7 +71,7 @@ export const createOrder = async (req: Request, res: Response) => {
 };
 
 export const createOrders = async (req: Request, res: Response) => {
-  const data: Order[] = req.body;
+  const data: OrderInterface[] = req.body;
   console.log(data);
   if (!data) {
     res.status(400).json({ message: "Drink name is null" });
