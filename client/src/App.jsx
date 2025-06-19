@@ -6,11 +6,13 @@ import IcedCoffee from "./components/IcedCoffee";
 import SettingsButton from "./components/SettingsButton";
 import OrderSummary from "./components/OrderSummary";
 import SettingsModal from "./components/SettingsModal";
+import FruitTea from "./components/FruitTea";
 
 function App() {
   const [showMilkTeaProduct, setShowMilkTeaProduct] = useState(true);
   const [showPrafProduct, setShowPrafProduct] = useState(false);
   const [showIcedCoffeeProduct, setShowIcedCoffeeProduct] = useState(false);
+  const [showFruitTeaProduct, setShowFruitTeaProduct] = useState(false);
 
   const [totalPriceForMilkTeas, setTotalPriceForMilkTeas] = useState(0);
   const [totalPriceForPrafs, setTotalPriceForPrafs] = useState(0);
@@ -41,7 +43,7 @@ ${domes}`);
     // const updatedTotal = totalPriceForMilkTeas + totalPriceForPrafs;
     setTotalPrice(updatedTotal);
     console.log(cart);
-  }, [totalPriceForMilkTeas, totalPriceForPrafs, cart]);
+  }, [totalPriceForMilkTeas, totalPriceForPrafs, cart]); // i dont know if this still necessary lol i forgot the logic here xD
 
   const myFunc = () => {
     console.log(cart);
@@ -53,6 +55,7 @@ ${domes}`);
         setShowMilkTeaProduct={setShowMilkTeaProduct}
         setShowPrafProduct={setShowPrafProduct}
         setShowIcedCoffeeProduct={setShowIcedCoffeeProduct}
+        setShowFruitTeaProduct={setShowFruitTeaProduct}
       />
       {showMilkTeaProduct && (
         <MilkTea
@@ -82,6 +85,20 @@ ${domes}`);
       )}
       {showIcedCoffeeProduct && (
         <IcedCoffee
+          cart={cart}
+          setCart={setCart}
+          medioCups={medioCups}
+          setMedioCups={setMedioCups}
+          grandeCups={grandeCups}
+          setGrandeCups={setGrandeCups}
+          straws={straws}
+          setStraws={setStraws}
+          domes={domes}
+          setDomes={setDomes}
+        />
+      )}
+      {showFruitTeaProduct && (
+        <FruitTea
           cart={cart}
           setCart={setCart}
           medioCups={medioCups}

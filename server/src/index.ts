@@ -18,6 +18,17 @@ app.use(express.json());
 
 app.use("/orders", ordersRouter);
 
+const object = {
+  name: "alice",
+  age: 14,
+};
+
+const [firstArray, secondArray] = Object.entries(object);
+const array = Object.entries(object);
+
+const myChangedArray = Object.fromEntries(array);
+console.log(firstArray[0]);
+
 app.listen(port, (err) => {
   if (err) throw err;
   console.log(`server running at port ${port}`);

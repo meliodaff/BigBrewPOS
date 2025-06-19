@@ -1,0 +1,62 @@
+[
+  {
+    "id": 33,
+    "drinkName": "Kiwi",
+    "drinkImage": "/icedcoffee/brusko.png",
+    "drinkCategory": "Fruit Tea"
+  },
+  {
+    "id": 34,
+    "drinkName": "Lychee",
+    "drinkImage": "/icedcoffee/mocha-coffee.png",
+    "drinkCategory": "Fruit Tea"
+  },
+  {
+    "id": 35,
+    "drinkName": "Green Apple",
+    "drinkImage": "/icedcoffee/macchiato.png",
+    "drinkCategory": "Fruit Tea"
+  },
+  {
+    "id": 36,
+    "drinkName": "Lemon",
+    "drinkImage": "/icedcoffee/vanilla.png",
+    "drinkCategory": "Fruit Tea"
+  },
+  {
+    "id": 37,
+    "drinkName": "Honey Peach",
+    "drinkImage": "/icedcoffee/caramel.png",
+    "drinkCategory": "Fruit Tea"
+  },
+  {
+    "id": 38,
+    "drinkName": "Mango",
+    "drinkImage": "/icedcoffee/matcha-coffee.png",
+    "drinkCategory": "Fruit Tea"
+  },
+  {
+    "id": 39,
+    "drinkName": "Blueberry",
+    "drinkImage": "/icedcoffee/fudge.png",
+    "drinkCategory": "Fruit Tea"
+  },
+  {
+    "id": 40,
+    "drinkName": "Strawberry",
+    "drinkImage": "/icedcoffee/spanish-latte.png",
+    "drinkCategory": "Fruit Tea"
+  },
+  {
+    "id": 41,
+    "drinkName": "Passion Fruit",
+    "drinkImage": "/icedcoffee/spanish-latte.png",
+    "drinkCategory": "Fruit Tea"
+  },
+  {
+    "id": 42,
+    "drinkName": "Watermelon",
+    "drinkImage": "/icedcoffee/spanish-latte.png",
+    "drinkCategory": "Fruit Tea"
+  }
+]
