@@ -1,0 +1,50 @@
+[
+  {
+    "id": 51,
+    "drinkName": "Hot Brusko",
+    "drinkImage": "/icedcoffee/brusko.png",
+    "drinkCategory": "Hot Brew"
+  },
+  {
+    "id": 52,
+    "drinkName": "Hot Choco",
+    "drinkImage": "/icedcoffee/mocha-coffee.png",
+    "drinkCategory": "Hot Brew"
+  },
+  {
+    "id": 53,
+    "drinkName": "Hot Moca",
+    "drinkImage": "/icedcoffee/macchiato.png",
+    "drinkCategory": "Hot Brew"
+  },
+  {
+    "id": 54,
+    "drinkName": "Hot Matcha",
+    "drinkImage": "/icedcoffee/vanilla.png",
+    "drinkCategory": "Hot Brew"
+  },
+  {
+    "id": 55,
+    "drinkName": "Hot Karamel",
+    "drinkImage": "/icedcoffee/caramel.png",
+    "drinkCategory": "Hot Brew"
+  },
+  {
+    "id": 56,
+    "drinkName": "Hot White Choco",
+    "drinkImage": "/icedcoffee/matcha-coffee.png",
+    "drinkCategory": "Hot Brew"
+  },
+  {
+    "id": 57,
+    "drinkName": "Hot Spanish",
+    "drinkImage": "/icedcoffee/fudge.png",
+    "drinkCategory": "Hot Brew"
+  },
+  {
+    "id": 58,
+    "drinkName": "Hot Vietnamese",
+    "drinkImage": "/icedcoffee/spanish-latte.png",
+    "drinkCategory": "Hot Brew"
+  }
+]

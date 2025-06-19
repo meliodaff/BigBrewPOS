@@ -1,7 +1,7 @@
 import { use, useEffect, useState } from "react";
 import formatAddOnName from "../services/formatAddOnName";
 
-const FruitTeaAddOns = (props) => {
+const BrostyAddOns = (props) => {
   const [size, setSize] = useState(props.size);
   const [addOns, setAddOns] = useState({
     extraShot: props.extraShot,
@@ -49,6 +49,11 @@ const FruitTeaAddOns = (props) => {
         alert("Straws has ran out");
         return;
       }
+
+      if (props.domes <= 0) {
+        alert("Domes has ran out");
+        return;
+      }
     }
     const priceForSize =
       size === "Medio" ? props.medioPrice : props.grandePrice;
@@ -73,13 +78,13 @@ const FruitTeaAddOns = (props) => {
     });
     // HAVE TO CHANGE THIS TO A MORE CONSISTENT NAME
     const newItem = {
-      id: props.fruitTea.id,
-      drinkName: props.fruitTea.drinkName,
+      id: props.brosty.id,
+      drinkName: props.brosty.drinkName,
       drinkSize: size,
-      drinkImage: props.fruitTea.drinkImage,
+      drinkImage: props.brosty.drinkImage,
       drinkAddOns: addOns,
       price: priceForSize + priceForAddOns,
-      drinkCategory: props.fruitTea.drinkCategory,
+      drinkCategory: props.brosty.drinkCategory,
     };
 
     if (props.forEdit) {
@@ -132,6 +137,7 @@ const FruitTeaAddOns = (props) => {
       }
 
       props.setStraws((prev) => prev - 1);
+      props.setDomes((prev) => prev - 1);
 
       if (newItem.drinkSize === "Medio") {
         props.setMedioCups((prev) => Number(prev - 1)); // i have to make a function where in the number of cups wont decrease when not checked out yet. That means i have to make a remaining cups variable to juts display so that the user is aware of the remaining cups
@@ -160,7 +166,7 @@ const FruitTeaAddOns = (props) => {
             >
               <h5 className="modal-title">
                 {props.forEdit && "Edit"}Add Ons for
-                {props.fruitTea.drinkName}
+                {props.brosty.drinkName}
               </h5>
               <button
                 type="button"
@@ -225,7 +231,7 @@ const FruitTeaAddOns = (props) => {
                     <button
                       disabled={
                         key === "extraShot" &&
-                        props.fruitTea.drinkName !== "Coffee Jelly"
+                        props.brosty.drinkName !== "Coffee Jelly"
                       }
                       onClick={() => {
                         if (addOns[key] >= 5) {
@@ -243,7 +249,7 @@ const FruitTeaAddOns = (props) => {
                     <button
                       disabled={
                         key === "extraShot" &&
-                        props.fruitTea.drinkName !== "Coffee Jelly"
+                        props.brosty.drinkName !== "Coffee Jelly"
                       }
                       onClick={() => {
                         if (addOns[key] <= 0) {
@@ -308,4 +314,4 @@ const FruitTeaAddOns = (props) => {
   );
 };
 
-export default FruitTeaAddOns;
+export default BrostyAddOns;

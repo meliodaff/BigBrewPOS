@@ -1,0 +1,50 @@
+[
+  {
+    "id": 43,
+    "drinkName": "Lychee",
+    "drinkImage": "/icedcoffee/brusko.png",
+    "drinkCategory": "Brosty"
+  },
+  {
+    "id": 44,
+    "drinkName": "Green Apple",
+    "drinkImage": "/icedcoffee/mocha-coffee.png",
+    "drinkCategory": "Brosty"
+  },
+  {
+    "id": 45,
+    "drinkName": "Blueberry",
+    "drinkImage": "/icedcoffee/macchiato.png",
+    "drinkCategory": "Brosty"
+  },
+  {
+    "id": 46,
+    "drinkName": "Lemon",
+    "drinkImage": "/icedcoffee/vanilla.png",
+    "drinkCategory": "Brosty"
+  },
+  {
+    "id": 47,
+    "drinkName": "Strawberry",
+    "drinkImage": "/icedcoffee/caramel.png",
+    "drinkCategory": "Brosty"
+  },
+  {
+    "id": 48,
+    "drinkName": "Kiwi",
+    "drinkImage": "/icedcoffee/matcha-coffee.png",
+    "drinkCategory": "Brosty"
+  },
+  {
+    "id": 49,
+    "drinkName": "Mango",
+    "drinkImage": "/icedcoffee/fudge.png",
+    "drinkCategory": "Brosty"
+  },
+  {
+    "id": 50,
+    "drinkName": "Honey Peach",
+    "drinkImage": "/icedcoffee/spanish-latte.png",
+    "drinkCategory": "Brosty"
+  }
+]

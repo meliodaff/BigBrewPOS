@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
-import fruitTeaDatas from "./data/fruitTea.json";
+import brostyDatas from "./data/brosty.json";
 import IcedCoffeeAddOns from "./IcedCoffeeAddOns";
 import FruitTeaAddOns from "./FruitTeaAddOns";
-const FruitTea = (props) => {
-  const [fruitTea, setFruitTea] = useState(fruitTeaDatas);
+import BrostyAddOns from "./BrostyAddOns";
+const Brosty = (props) => {
+  const [brosty, setBrosty] = useState(brostyDatas);
 
-  const [fruitTeaForAddOns, setFruitTeaForAddOns] = useState(null);
+  const [brostyForAddOns, setBrostyForAddOns] = useState(null);
 
   const [showAddOns, setShowAddOns] = useState(false);
 
-  const handleClick = (fruitTeaItem) => {
-    setFruitTeaForAddOns(fruitTeaItem);
+  const handleClick = (brostyItem) => {
+    setBrostyForAddOns(brostyItem);
     setShowAddOns(true);
   };
 
@@ -21,7 +22,7 @@ const FruitTea = (props) => {
   return (
     <>
       <div className="product-grid">
-        {fruitTea.map((value, index) => (
+        {brosty.map((value, index) => (
           <div className="product-container" key={index}>
             <button
               onClick={() => handleClick(value)}
@@ -34,13 +35,13 @@ const FruitTea = (props) => {
         ))}
       </div>
       {showAddOns && (
-        <FruitTeaAddOns
-          fruitTea={fruitTeaForAddOns}
+        <BrostyAddOns
+          brosty={brostyForAddOns}
           onClose={() => setShowAddOns(false)}
           cart={props.cart}
           setCart={props.setCart}
-          medioPrice={29}
-          grandePrice={39}
+          medioPrice={49}
+          grandePrice={59}
           extraShot={0}
           pearl={0}
           crystal={0}
@@ -66,4 +67,4 @@ const FruitTea = (props) => {
   );
 };
 
-export default FruitTea;
+export default Brosty;
