@@ -6,6 +6,7 @@ import IcedCoffeeAddOns from "./IcedCoffeeAddOns";
 import PrafAddOns from "./PrafAddOns";
 import FruitTeaAddOns from "./FruitTeaAddOns";
 import BrostyAddOns from "./BrostyAddOns";
+import SpecialAddOns from "./SpecialAddOns";
 const ViewItems = (props) => {
   const [showRemoveModal, setShowRemoveModal] = useState(false);
   const [positionToRemove, setPositionToRemove] = useState(null);
@@ -350,6 +351,51 @@ const ViewItems = (props) => {
         <BrostyAddOns
           // milkTea={milkTeaForAddOns || ""}
           brosty={drinkToEdit}
+          onClose={() => setShowEditModal(false)}
+          cart={props.cart}
+          setCart={props.setCart}
+          medioPrice={49}
+          grandePrice={59}
+          extraShot={0}
+          pearl={drinkToEdit.drinkAddOns.pearl}
+          crystal={drinkToEdit.drinkAddOns.crystal}
+          creamCheese={drinkToEdit.drinkAddOns.creamCheese}
+          creamPuff={drinkToEdit.drinkAddOns.creamPuff}
+          cheesecake={drinkToEdit.drinkAddOns.cheesecake}
+          crushedOreo={drinkToEdit.drinkAddOns.crushedOreo}
+          coffeeJelly={drinkToEdit.drinkAddOns.coffeeJelly}
+          whippedCream={drinkToEdit.drinkAddOns.whippedCream}
+          forEdit={true}
+          currentCart={currentCart}
+          setCurrentCart={setCurrentCart}
+          positionToEdit={positionToEdit}
+          size={drinkToEdit.drinkSize}
+          medioCups={props.medioCups}
+          setMedioCups={props.setMedioCups}
+          grandeCups={props.grandeCups}
+          setGrandeCups={props.setGrandeCups}
+          domes={props.domes}
+          setDomes={props.setDomes}
+          straws={props.straws}
+          setStraws={props.setStraws}
+          returnedMedioCups={returnedMedioCups}
+          returnedGrandeCups={returnedGrandeCups}
+          setReturnedMedioCups={setReturnedMedioCups}
+          setReturnedGrandeCups={setReturnedGrandeCups}
+          currentMedioCups={currentMedioCups}
+          currentGrandeCups={currentGrandeCups}
+          setCurrentMedioCups={setCurrentMedioCups}
+          setCurrentGrandeCups={setCurrentGrandeCups}
+          currentStraws={currentStraws}
+          setCurrentStraws={setCurrentStraws}
+          currentDomes={currentDomes}
+          setCurrentDomes={setCurrentDomes}
+        />
+      ) : null}
+      {showEditModal && drinkToEdit.drinkCategory === "Special" ? (
+        <SpecialAddOns
+          // milkTea={milkTeaForAddOns || ""}
+          special={drinkToEdit}
           onClose={() => setShowEditModal(false)}
           cart={props.cart}
           setCart={props.setCart}

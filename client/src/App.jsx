@@ -8,6 +8,7 @@ import OrderSummary from "./components/OrderSummary";
 import SettingsModal from "./components/SettingsModal";
 import FruitTea from "./components/FruitTea";
 import Brosty from "./components/Brosty";
+import Special from "./components/Special";
 
 function App() {
   const [showMilkTeaProduct, setShowMilkTeaProduct] = useState(true);
@@ -15,6 +16,7 @@ function App() {
   const [showIcedCoffeeProduct, setShowIcedCoffeeProduct] = useState(false);
   const [showFruitTeaProduct, setShowFruitTeaProduct] = useState(false);
   const [showBrostyProduct, setShowBrostyProduct] = useState(false);
+  const [showSpecialProduct, setShowSpecialProduct] = useState(false);
 
   const [totalPriceForMilkTeas, setTotalPriceForMilkTeas] = useState(0);
   const [totalPriceForPrafs, setTotalPriceForPrafs] = useState(0);
@@ -59,6 +61,7 @@ ${domes}`);
         setShowIcedCoffeeProduct={setShowIcedCoffeeProduct}
         setShowFruitTeaProduct={setShowFruitTeaProduct}
         setShowBrostyProduct={setShowBrostyProduct}
+        setShowSpecialProduct={setShowSpecialProduct}
       />
       {showMilkTeaProduct && (
         <MilkTea
@@ -116,6 +119,20 @@ ${domes}`);
       )}
       {showBrostyProduct && (
         <Brosty
+          cart={cart}
+          setCart={setCart}
+          medioCups={medioCups}
+          setMedioCups={setMedioCups}
+          grandeCups={grandeCups}
+          setGrandeCups={setGrandeCups}
+          straws={straws}
+          setStraws={setStraws}
+          domes={domes}
+          setDomes={setDomes}
+        />
+      )}
+      {showSpecialProduct && (
+        <Special
           cart={cart}
           setCart={setCart}
           medioCups={medioCups}

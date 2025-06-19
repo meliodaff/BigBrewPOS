@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import fruitTeaDatas from "./data/fruitTea.json";
-import FruitTeaAddOns from "./FruitTeaAddOns";
-const FruitTea = (props) => {
-  const [fruitTea, setFruitTea] = useState(fruitTeaDatas);
+import specialDatas from "./data/special.json";
+import SpecialAddOns from "./SpecialAddOns";
+const Special = (props) => {
+  const [special, setSpecial] = useState(specialDatas);
 
-  const [fruitTeaForAddOns, setFruitTeaForAddOns] = useState(null);
+  const [specialForAddOns, setSpecialForAddOns] = useState(null);
 
   const [showAddOns, setShowAddOns] = useState(false);
 
-  const handleClick = (fruitTeaItem) => {
-    setFruitTeaForAddOns(fruitTeaItem);
+  const handleClick = (specialItem) => {
+    setSpecialForAddOns(specialItem);
     setShowAddOns(true);
   };
 
@@ -20,7 +20,7 @@ const FruitTea = (props) => {
   return (
     <>
       <div className="product-grid">
-        {fruitTea.map((value, index) => (
+        {special.map((value, index) => (
           <div className="product-container" key={index}>
             <button
               onClick={() => handleClick(value)}
@@ -33,8 +33,8 @@ const FruitTea = (props) => {
         ))}
       </div>
       {showAddOns && (
-        <FruitTeaAddOns
-          fruitTea={fruitTeaForAddOns}
+        <SpecialAddOns
+          special={specialForAddOns}
           onClose={() => setShowAddOns(false)}
           cart={props.cart}
           setCart={props.setCart}
@@ -57,12 +57,10 @@ const FruitTea = (props) => {
           setGrandeCups={props.setGrandeCups}
           straws={props.straws}
           setStraws={props.setStraws}
-          domes={props.domes}
-          setDomes={props.setDomes}
         />
       )}
     </>
   );
 };
 
-export default FruitTea;
+export default Special;
