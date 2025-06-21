@@ -37,26 +37,30 @@ const HotBrewAddOns = (props) => {
 
   const handleClick = () => {
     if (!props.forEdit) {
-      if (size === "Medio" && props.medioCups <= 0) {
-        alert("Medio Cups has ran out");
-        return;
-      } else if (size === "Grande" && props.grandeCups <= 0) {
-        alert("Grande Cups has ran out");
+      if (props.hotCups <= 0) {
+        alert("Hot Cups has ran out");
         return;
       }
+      //   } else if (size === "Grande" && props.grandeCups <= 0) {
+      //     alert("Grande Cups has ran out");
+      //     return;
+      //   }
 
-      if (props.straws <= 0) {
-        alert("Straws has ran out");
+      if (props.flatLids <= 0) {
+        alert("Flat Lids has ran out");
         return;
       }
     }
-    const priceForSize =
-      size === "Medio"
-        ? props.medioPrice
-        : size === "Hot"
-        ? props.hotPrice
-        : props.grandePrice;
+    // const priceForSize =
+    //   size === "Medio"
+    //     ? props.medioPrice
+    //     : size === "Hot"
+    //     ? props.hotPrice
+    //     : props.grandePrice;
     // const priceForAddOns = addOns.length * 9;
+
+    // i set this static because there is only one price for hot brews
+    const priceForSize = 35;
 
     let priceForAddOns = 0;
 
@@ -87,39 +91,35 @@ const HotBrewAddOns = (props) => {
     };
 
     if (props.forEdit) {
-      if (
-        size === "Medio" &&
-        props.currentMedioCups <= 0 &&
-        originalSize !== size
-      ) {
-        alert("Medio Cups has ran out");
+      if (props.currentHotCups <= 0) {
+        alert("Hot Cups has ran out");
         return;
-      } else if (
-        size === "Grande" &&
-        props.currentGrandeCups <= 0 &&
-        originalSize !== size
-      ) {
-        alert("Grande Cups has ran out");
-        return;
+        //   } else if (
+        //     size === "Grande" &&
+        //     props.currentGrandeCups <= 0 &&
+        //     originalSize !== size
+        //   ) {
+        //     alert("Grande Cups has ran out");
+        //     // return;
       }
 
-      if (
-        props.currentCart[props.positionToEdit].drinkSize === "Medio" &&
-        originalSize !== size
-      ) {
-        props.setReturnedMedioCups((prev) => Number(prev + 1));
-        props.setReturnedGrandeCups((prev) => Number(prev - 1));
-        props.setCurrentGrandeCups((prev) => prev - 1);
-        props.setCurrentMedioCups((prev) => prev + 1);
-      } else if (
-        props.currentCart[props.positionToEdit].drinkSize === "Grande" &&
-        originalSize !== size
-      ) {
-        props.setReturnedMedioCups((prev) => Number(prev - 1));
-        props.setReturnedGrandeCups((prev) => Number(prev + 1));
-        props.setCurrentMedioCups((prev) => prev - 1);
-        props.setCurrentGrandeCups((prev) => prev + 1);
-      }
+      //   if (
+      //     props.currentCart[props.positionToEdit].drinkSize === "Medio" &&
+      //     originalSize !== size
+      //   ) {
+      //     props.setReturnedMedioCups((prev) => Number(prev + 1));
+      //     props.setReturnedGrandeCups((prev) => Number(prev - 1));
+      //     props.setCurrentGrandeCups((prev) => prev - 1);
+      //     props.setCurrentMedioCups((prev) => prev + 1);
+      //   } else if (
+      //     props.currentCart[props.positionToEdit].drinkSize === "Grande" &&
+      //     originalSize !== size
+      //   ) {
+      //     props.setReturnedMedioCups((prev) => Number(prev - 1));
+      //     props.setReturnedGrandeCups((prev) => Number(prev + 1));
+      //     props.setCurrentMedioCups((prev) => prev - 1);
+      //     props.setCurrentGrandeCups((prev) => prev + 1);
+      //   }
 
       console.log(newItem);
       props.setCurrentCart((prev) => {
@@ -129,19 +129,33 @@ const HotBrewAddOns = (props) => {
       });
     } else {
       // HAVE TO CHANGE THIS TO A MORE CONSISTENT NAME
+
+      if (props.hotCups <= 0) {
+        alert("Hot Cups has ran out");
+        return;
+      }
+
+      if (props.flatLids <= 0) {
+        alert("Flat Lids has ran out");
+        return;
+      }
+
+      props.setHotCups((prev) => Number(prev - 1));
+      props.setFlatLids((prev) => Number(prev - 1));
+
       if (props.cart.length < 1) {
         props.setCart([newItem]);
       } else {
         props.setCart((prev) => [...prev, newItem]);
       }
 
-      props.setStraws((prev) => prev - 1);
+      //   props.setStraws((prev) => prev - 1);
 
-      if (newItem.drinkSize === "Medio") {
-        props.setMedioCups((prev) => Number(prev - 1)); // i have to make a function where in the number of cups wont decrease when not checked out yet. That means i have to make a remaining cups variable to juts display so that the user is aware of the remaining cups
-      } else if (newItem.drinkSize === "Grande") {
-        props.setGrandeCups((prev) => Number(prev - 1));
-      }
+      //   if (newItem.drinkSize === "Medio") {
+      //     props.setMedioCups((prev) => Number(prev - 1)); // i have to make a function where in the number of cups wont decrease when not checked out yet. That means i have to make a remaining cups variable to juts display so that the user is aware of the remaining cups
+      //   } else if (newItem.drinkSize === "Grande") {
+      //     props.setGrandeCups((prev) => Number(prev - 1));
+      //   }
     }
   };
 
@@ -177,7 +191,9 @@ const HotBrewAddOns = (props) => {
             <div className="modal-body" style={{ paddingTop: "0" }}>
               <h4>Sizes:</h4>
               <div className="sizes-container">
-                <input
+                <div></div>
+                <div></div>
+                {/* <input
                   type="checkbox"
                   className="size-checkbox"
                   checked={size === "Medio"}
@@ -185,11 +201,11 @@ const HotBrewAddOns = (props) => {
                     setSize("Medio");
                   }}
                 />
-                <div className="size">Medio</div>
+                <div className="size">Medio</div> */}
                 <div className="remaining-cups-container">
                   <strong>Remaining Cups:</strong>
                 </div>
-                <input
+                {/* <input
                   type="checkbox"
                   className="size-checkbox"
                   checked={size === "Grande"}
@@ -203,7 +219,7 @@ const HotBrewAddOns = (props) => {
                     Medio:{" "}
                     {props.forEdit ? props.currentMedioCups : props.medioCups}
                   </div>
-                </div>
+                </div> */}
 
                 <input
                   type="checkbox"
@@ -217,15 +233,16 @@ const HotBrewAddOns = (props) => {
                 <div>Hot</div>
                 <div className="remaining-cups-container">
                   <div>
-                    Grande:{" "}
-                    {props.forEdit ? props.currentGrandeCups : props.grandeCups}
+                    Hot Cups:{" "}
+                    {props.forEdit ? props.currentHotCups : props.hotCups}
                   </div>
                 </div>
                 <div></div>
                 <div></div>
                 <div className="remaining-cups-container">
                   <div>
-                    Straws: {props.forEdit ? props.currentStraws : props.straws}
+                    Flat Lids:{" "}
+                    {props.forEdit ? props.currentFlatLids : props.flatLids}
                   </div>
                 </div>
               </div>

@@ -20,12 +20,18 @@ const SettingsModal = (props) => {
   const [currentDomes, setCurrentDomes] = useState(Number(props.domes));
 
   const [currentStraws, setCurrentStraws] = useState(Number(props.straws));
+  const [currentHotCups, setCurrentHotCups] = useState(Number(props.hotCups));
+  const [currentFlatLids, setCurrentFlatLids] = useState(
+    Number(props.flatLids)
+  );
 
   const handleClick = () => {
     props.setMedioCups(Number(currentMedioCups));
     props.setGrandeCups(Number(currentGrandeCups));
     props.setDomes(Number(currentDomes));
     props.setStraws(Number(currentStraws));
+    props.setHotCups(Number(currentHotCups));
+    props.setFlatLids(Number(currentFlatLids));
     props.onClose();
   };
   return (
@@ -142,6 +148,20 @@ const SettingsModal = (props) => {
                     placeholder="0"
                     value={currentDomes}
                     onChange={(e) => setCurrentDomes(Number(e.target.value))}
+                  />
+                  <span>Hot Cups: </span>
+                  <input
+                    type="number"
+                    placeholder="0"
+                    value={currentHotCups}
+                    onChange={(e) => setCurrentHotCups(Number(e.target.value))}
+                  />
+                  <span>Flat Lids: </span>
+                  <input
+                    type="number"
+                    placeholder="0"
+                    value={currentFlatLids}
+                    onChange={(e) => setCurrentFlatLids(Number(e.target.value))}
                   />
                 </div>
               )}

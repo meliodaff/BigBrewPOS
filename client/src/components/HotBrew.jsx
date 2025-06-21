@@ -51,15 +51,11 @@ const HotBrew = (props) => {
           coffeeJelly={0}
           whippedCream={0}
           forEdit={false}
-          size={"Medio"}
-          medioCups={props.medioCups}
-          setMedioCups={props.setMedioCups}
-          grandeCups={props.grandeCups}
-          setGrandeCups={props.setGrandeCups}
-          straws={props.straws}
-          setStraws={props.setStraws}
-          domes={props.domes}
-          setDomes={props.setDomes}
+          size={"Hot"}
+          hotCups={props.hotCups}
+          setHotCups={props.setHotCups}
+          flatLids={props.flatLids}
+          setFlatLids={props.setFlatLids}
         />
       )}
     </>

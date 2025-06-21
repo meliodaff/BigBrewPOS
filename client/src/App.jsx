@@ -32,6 +32,8 @@ function App() {
   const [straws, setStraws] = useState(5);
   const [domes, setDomes] = useState(5);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
+  const [hotCups, setHotCups] = useState(5);
+  const [flatLids, setFlatLids] = useState(5);
 
   useEffect(() => {
     console.log(`${medioCups}
@@ -146,20 +148,28 @@ ${domes}`);
           setStraws={setStraws}
           domes={domes}
           setDomes={setDomes}
+          hotCups={hotCups}
+          setHotCups={setHotCups}
+          flatLids={flatLids}
+          setFlatLids={setFlatLids}
         />
       )}
       {showHotBrewProduct && (
         <HotBrew
           cart={cart}
           setCart={setCart}
-          medioCups={medioCups}
-          setMedioCups={setMedioCups}
-          grandeCups={grandeCups}
-          setGrandeCups={setGrandeCups}
-          straws={straws}
-          setStraws={setStraws}
-          domes={domes}
-          setDomes={setDomes}
+          // medioCups={medioCups}
+          // setMedioCups={setMedioCups}
+          // grandeCups={grandeCups}
+          // setGrandeCups={setGrandeCups}
+          // straws={straws}
+          // setStraws={setStraws}
+          // domes={domes}
+          // setDomes={setDomes}
+          hotCups={hotCups}
+          setHotCups={setHotCups}
+          flatLids={flatLids}
+          setFlatLids={setFlatLids}
         />
       )}
       <SettingsButton setShowSettingsModal={setShowSettingsModal} />
@@ -177,6 +187,10 @@ ${domes}`);
         setStraws={setStraws}
         domes={domes}
         setDomes={setDomes}
+        hotCups={hotCups}
+        setHotCups={setHotCups}
+        flatLids={flatLids}
+        setFlatLids={setFlatLids}
       />
       {showSettingsModal && (
         <SettingsModal
@@ -189,6 +203,10 @@ ${domes}`);
           setDomes={setDomes}
           straws={straws}
           setStraws={setStraws}
+          hotCups={hotCups}
+          setHotCups={setHotCups}
+          flatLids={flatLids}
+          setFlatLids={setFlatLids}
         />
       )}
     </>

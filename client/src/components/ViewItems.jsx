@@ -22,15 +22,20 @@ const ViewItems = (props) => {
   const [currentGrandeCups, setCurrentGrandeCups] = useState(props.grandeCups);
   const [currentStraws, setCurrentStraws] = useState(props.straws);
   const [currentDomes, setCurrentDomes] = useState(props.domes);
+  const [currentHotCups, setCurrentHotCups] = useState(props.hotCups);
+  const [currentFlatLids, setCurrentFlatLids] = useState(props.flatLids);
+  const [returnedHotCups, setReturnedHotCups] = useState(0);
+  const [returnedFlatLids, setReturnedFlatLids] = useState(0);
 
   useEffect(() => {
     setCurrentCart(props.cart);
   }, []);
 
   const handleRemove = () => {
-    setCurrentStraws((prev) => prev + 1);
-
     const updatedCart = [...currentCart];
+    if (updatedCart[positionToRemove].drinkCategory !== "Hot Brew") {
+      setCurrentStraws((prev) => prev + 1);
+    }
 
     if (updatedCart[positionToRemove].drinkCategory === "Praf") {
       setCurrentDomes((prev) => prev + 1);
@@ -42,6 +47,11 @@ const ViewItems = (props) => {
     } else if (updatedCart[positionToRemove].drinkSize === "Grande") {
       setReturnedGrandeCups((prev) => prev + 1);
       setCurrentGrandeCups((prev) => prev + 1);
+    } else if (updatedCart[positionToRemove].drinkSize === "Hot") {
+      console.log("im here doing my job");
+      setReturnedHotCups((prev) => prev + 1);
+      setCurrentHotCups((prev) => prev + 1);
+      setCurrentFlatLids((prev) => prev + 1);
     }
     updatedCart.splice(positionToRemove, 1);
     setCurrentCart(updatedCart);
@@ -146,6 +156,8 @@ const ViewItems = (props) => {
                       props.setGrandeCups(currentGrandeCups);
                       props.setDomes(currentDomes);
                       props.setStraws(currentStraws);
+                      props.setHotCups(currentHotCups);
+                      props.setFlatLids(currentFlatLids);
                       props.onClose();
                     }}
                   >
@@ -469,6 +481,10 @@ const ViewItems = (props) => {
           setDomes={props.setDomes}
           straws={props.straws}
           setStraws={props.setStraws}
+          hotCups={props.hotCups}
+          setHotCups={props.setHotCups}
+          flatLids={props.flatLids}
+          setFlatLids={props.setFlatLids}
           returnedMedioCups={returnedMedioCups}
           returnedGrandeCups={returnedGrandeCups}
           setReturnedMedioCups={setReturnedMedioCups}
@@ -481,6 +497,14 @@ const ViewItems = (props) => {
           setCurrentStraws={setCurrentStraws}
           currentDomes={currentDomes}
           setCurrentDomes={setCurrentDomes}
+          currentHotCups={currentHotCups}
+          setCurrentHotCups={setCurrentHotCups}
+          currentFlatLids={currentFlatLids}
+          setCurrentFlatLids={setCurrentFlatLids}
+          returnedHotCups={returnedHotCups}
+          setReturnedHotCups={setReturnedHotCups}
+          returnedFlatLids={returnedFlatLids}
+          setReturnedFlatLids={setReturnedFlatLids}
         />
       ) : null}
     </>

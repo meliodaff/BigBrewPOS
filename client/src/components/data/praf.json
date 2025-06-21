@@ -2,73 +2,73 @@
   {
     "id": 13,
     "drinkName": "Coffee Jelly",
-    "drinkImage": "/praf/coffee-jelly.png",
+    "drinkImage": "/praf/coffee jelly2.png",
     "drinkCategory": "Praf"
   },
   {
     "id": 14,
     "drinkName": "Caramel Macch",
-    "drinkImage": "/praf/caramel-macch.png",
+    "drinkImage": "/praf/caramel macch2.png",
     "drinkCategory": "Praf"
   },
   {
     "id": 15,
     "drinkName": "Mocha",
-    "drinkImage": "/praf/mocha.png",
+    "drinkImage": "/praf/mocha2.png",
     "drinkCategory": "Praf"
   },
   {
     "id": 16,
     "drinkName": "Vanilla Coffee",
-    "drinkImage": "/praf/vanilla-coffee.png",
+    "drinkImage": "/praf/vanilla coffee2.png",
     "drinkCategory": "Praf"
   },
   {
     "id": 17,
     "drinkName": "Java Chip",
-    "drinkImage": "/praf/java-chip.png",
+    "drinkImage": "/praf/java chip2.png",
     "drinkCategory": "Praf"
   },
   {
     "id": 18,
     "drinkName": "Cheesecake",
-    "drinkImage": "/praf/cheesecake.png",
+    "drinkImage": "/praf/cheesecake2.png",
     "drinkCategory": "Praf"
   },
   {
     "id": 19,
     "drinkName": "Cookies & Cream",
-    "drinkImage": "/praf/cookies-and-cream.png",
+    "drinkImage": "/praf/cookies and cream2.png",
     "drinkCategory": "Praf"
   },
   {
     "id": 20,
     "drinkName": "Creamy Avocado",
-    "drinkImage": "/praf/creamy-avocado.png",
+    "drinkImage": "/praf/creamy avocado2.png",
     "drinkCategory": "Praf"
   },
   {
     "id": 21,
     "drinkName": "Chocolate",
-    "drinkImage": "/praf/chocolate.png",
+    "drinkImage": "/praf/chocolate2.png",
     "drinkCategory": "Praf"
   },
   {
     "id": 22,
     "drinkName": "Matcha",
-    "drinkImage": "/praf/matcha.png",
+    "drinkImage": "/praf/matcha2.png",
     "drinkCategory": "Praf"
   },
   {
     "id": 23,
     "drinkName": "Strawberry",
-    "drinkImage": "/praf/strawberry.png",
+    "drinkImage": "/praf/strawberry2.png",
     "drinkCategory": "Praf"
   },
   {
     "id": 24,
     "drinkName": "Taro",
-    "drinkImage": "/praf/taro.png",
+    "drinkImage": "/praf/taro2.png",
     "drinkCategory": "Praf"
   }
 ]
