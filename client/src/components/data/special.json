@@ -2,25 +2,25 @@
   {
     "id": 59,
     "drinkName": "Boss Brew",
-    "drinkImage": "/icedcoffee/brusko.png",
+    "drinkImage": "/special/boss brew.png",
     "drinkCategory": "Special"
   },
   {
     "id": 60,
     "drinkName": "Blackpink",
-    "drinkImage": "/icedcoffee/mocha-coffee.png",
+    "drinkImage": "/special/blackpink.png",
     "drinkCategory": "Special"
   },
   {
     "id": 61,
     "drinkName": "Kape Karavan",
-    "drinkImage": "/icedcoffee/macchiato.png",
+    "drinkImage": "/special/kape karavan.png",
     "drinkCategory": "Special"
   },
   {
     "id": 62,
     "drinkName": "Kape KMJS",
-    "drinkImage": "/icedcoffee/vanilla.png",
+    "drinkImage": "/special/kape kmjs.png",
     "drinkCategory": "Special"
   }
 ]

@@ -24,6 +24,7 @@ const Header = (props) => {
     props.setShowFruitTeaProduct(false);
     props.setShowBrostyProduct(false);
     props.setShowSpecialProduct(false);
+    props.setShowHotBrewProduct(false);
   };
 
   const milkTeaClick = () => {
@@ -41,6 +42,7 @@ const Header = (props) => {
     props.setShowFruitTeaProduct(false);
     props.setShowBrostyProduct(false);
     props.setShowSpecialProduct(false);
+    props.setShowHotBrewProduct(false);
   };
 
   const fruitTeaClick = () => {
@@ -58,6 +60,7 @@ const Header = (props) => {
     props.setShowFruitTeaProduct(true);
     props.setShowBrostyProduct(false);
     props.setShowSpecialProduct(false);
+    props.setShowHotBrewProduct(false);
   };
 
   const prafClick = () => {
@@ -75,6 +78,7 @@ const Header = (props) => {
     props.setShowFruitTeaProduct(false);
     props.setShowBrostyProduct(false);
     props.setShowSpecialProduct(false);
+    props.setShowHotBrewProduct(false);
   };
 
   const hotBrewClick = () => {
@@ -85,6 +89,14 @@ const Header = (props) => {
     setPraf(false);
     setBrosty(false);
     setSpecial(false);
+
+    props.setShowIcedCoffeeProduct(false);
+    props.setShowMilkTeaProduct(false);
+    props.setShowPrafProduct(false);
+    props.setShowFruitTeaProduct(false);
+    props.setShowBrostyProduct(false);
+    props.setShowSpecialProduct(false);
+    props.setShowHotBrewProduct(true);
   };
 
   const brostyClick = () => {
@@ -102,6 +114,7 @@ const Header = (props) => {
     props.setShowFruitTeaProduct(false);
     props.setShowBrostyProduct(true);
     props.setShowSpecialProduct(false);
+    props.setShowHotBrewProduct(false);
   };
 
   const specialClick = () => {
@@ -119,6 +132,7 @@ const Header = (props) => {
     props.setShowFruitTeaProduct(false);
     props.setShowBrostyProduct(false);
     props.setShowSpecialProduct(true);
+    props.setShowHotBrewProduct(false);
   };
 
   return (

@@ -2,49 +2,49 @@
   {
     "id": 51,
     "drinkName": "Hot Brusko",
-    "drinkImage": "/icedcoffee/brusko.png",
+    "drinkImage": "/hotBrew/hotBrew-general.png",
     "drinkCategory": "Hot Brew"
   },
   {
     "id": 52,
     "drinkName": "Hot Choco",
-    "drinkImage": "/icedcoffee/mocha-coffee.png",
+    "drinkImage": "/hotBrew/hotBrew-general.png",
     "drinkCategory": "Hot Brew"
   },
   {
     "id": 53,
     "drinkName": "Hot Moca",
-    "drinkImage": "/icedcoffee/macchiato.png",
+    "drinkImage": "/hotBrew/hotBrew-general.png",
     "drinkCategory": "Hot Brew"
   },
   {
     "id": 54,
     "drinkName": "Hot Matcha",
-    "drinkImage": "/icedcoffee/vanilla.png",
+    "drinkImage": "/hotBrew/hotBrew-general.png",
     "drinkCategory": "Hot Brew"
   },
   {
     "id": 55,
     "drinkName": "Hot Karamel",
-    "drinkImage": "/icedcoffee/caramel.png",
+    "drinkImage": "/hotBrew/hotBrew-general.png",
     "drinkCategory": "Hot Brew"
   },
   {
     "id": 56,
     "drinkName": "Hot White Choco",
-    "drinkImage": "/icedcoffee/matcha-coffee.png",
+    "drinkImage": "/hotBrew/hotBrew-general.png",
     "drinkCategory": "Hot Brew"
   },
   {
     "id": 57,
     "drinkName": "Hot Spanish",
-    "drinkImage": "/icedcoffee/fudge.png",
+    "drinkImage": "/hotBrew/hotBrew-general.png",
     "drinkCategory": "Hot Brew"
   },
   {
     "id": 58,
     "drinkName": "Hot Vietnamese",
-    "drinkImage": "/icedcoffee/spanish-latte.png",
+    "drinkImage": "/hotBrew/hotBrew-general.png",
     "drinkCategory": "Hot Brew"
   }
 ]

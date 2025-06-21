@@ -2,49 +2,49 @@
   {
     "id": 43,
     "drinkName": "Lychee",
-    "drinkImage": "/icedcoffee/brusko.png",
+    "drinkImage": "/brosty/lychee1.png",
     "drinkCategory": "Brosty"
   },
   {
     "id": 44,
     "drinkName": "Green Apple",
-    "drinkImage": "/icedcoffee/mocha-coffee.png",
+    "drinkImage": "/brosty/green apple1.png",
     "drinkCategory": "Brosty"
   },
   {
     "id": 45,
     "drinkName": "Blueberry",
-    "drinkImage": "/icedcoffee/macchiato.png",
+    "drinkImage": "/brosty/blueberry1.png",
     "drinkCategory": "Brosty"
   },
   {
     "id": 46,
     "drinkName": "Lemon",
-    "drinkImage": "/icedcoffee/vanilla.png",
+    "drinkImage": "/brosty/lemon1.png",
     "drinkCategory": "Brosty"
   },
   {
     "id": 47,
     "drinkName": "Strawberry",
-    "drinkImage": "/icedcoffee/caramel.png",
+    "drinkImage": "/brosty/strawberry1.png",
     "drinkCategory": "Brosty"
   },
   {
     "id": 48,
     "drinkName": "Kiwi",
-    "drinkImage": "/icedcoffee/matcha-coffee.png",
+    "drinkImage": "/brosty/kiwi1.png",
     "drinkCategory": "Brosty"
   },
   {
     "id": 49,
     "drinkName": "Mango",
-    "drinkImage": "/icedcoffee/fudge.png",
+    "drinkImage": "/brosty/mango1.png",
     "drinkCategory": "Brosty"
   },
   {
     "id": 50,
     "drinkName": "Honey Peach",
-    "drinkImage": "/icedcoffee/spanish-latte.png",
+    "drinkImage": "/brosty/honey peach 1.png",
     "drinkCategory": "Brosty"
   }
 ]

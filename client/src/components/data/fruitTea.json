@@ -2,61 +2,61 @@
   {
     "id": 33,
     "drinkName": "Kiwi",
-    "drinkImage": "/icedcoffee/brusko.png",
+    "drinkImage": "/fruitTea/kiwi.png",
     "drinkCategory": "Fruit Tea"
   },
   {
     "id": 34,
     "drinkName": "Lychee",
-    "drinkImage": "/icedcoffee/mocha-coffee.png",
+    "drinkImage": "/fruitTea/lychee.png",
     "drinkCategory": "Fruit Tea"
   },
   {
     "id": 35,
     "drinkName": "Green Apple",
-    "drinkImage": "/icedcoffee/macchiato.png",
+    "drinkImage": "/fruitTea/green apple.png",
     "drinkCategory": "Fruit Tea"
   },
   {
     "id": 36,
     "drinkName": "Lemon",
-    "drinkImage": "/icedcoffee/vanilla.png",
+    "drinkImage": "/fruitTea/lemon.png",
     "drinkCategory": "Fruit Tea"
   },
   {
     "id": 37,
     "drinkName": "Honey Peach",
-    "drinkImage": "/icedcoffee/caramel.png",
+    "drinkImage": "/fruitTea/honey peach.png",
     "drinkCategory": "Fruit Tea"
   },
   {
     "id": 38,
     "drinkName": "Mango",
-    "drinkImage": "/icedcoffee/matcha-coffee.png",
+    "drinkImage": "/fruitTea/mango.png",
     "drinkCategory": "Fruit Tea"
   },
   {
     "id": 39,
     "drinkName": "Blueberry",
-    "drinkImage": "/icedcoffee/fudge.png",
+    "drinkImage": "/fruitTea/blueberry.png",
     "drinkCategory": "Fruit Tea"
   },
   {
     "id": 40,
     "drinkName": "Strawberry",
-    "drinkImage": "/icedcoffee/spanish-latte.png",
+    "drinkImage": "/fruitTea/strawberry-fruit-tea.png",
     "drinkCategory": "Fruit Tea"
   },
   {
     "id": 41,
     "drinkName": "Passion Fruit",
-    "drinkImage": "/icedcoffee/spanish-latte.png",
+    "drinkImage": "/fruitTea/passion fruit.png",
     "drinkCategory": "Fruit Tea"
   },
   {
     "id": 42,
     "drinkName": "Watermelon",
-    "drinkImage": "/icedcoffee/spanish-latte.png",
+    "drinkImage": "/fruitTea/watermelon.png",
     "drinkCategory": "Fruit Tea"
   }
 ]
